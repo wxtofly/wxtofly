@@ -1,0 +1,433 @@
+
+[
+ {
+  "time":"2018/03/17 12:30:03",
+  "type":"OK",
+  "message":"Starting run for 18z"
+ },
+ {
+  "time":"2018/03/17 12:30:06",
+  "type":"OK",
+  "message":"[RUN] Starting job 18z-PNW"
+ },
+ {
+  "time":"2018/03/17 12:30:09",
+  "type":"OK",
+  "message":"[RASP-PNW]: Starting RASP run"
+ },
+ {
+  "time":"2018/03/17 13:10:43",
+  "type":"OK",
+  "message":"[RASP-PNW]: Finished run in 00:40:34"
+ },
+ {
+  "time":"2018/03/17 13:10:45",
+  "type":"OK",
+  "message":"[RUN] Starting job 18z-PNW-WINDOW"
+ },
+ {
+  "time":"2018/03/17 13:10:47",
+  "type":"OK",
+  "message":"[RASP-PNW]: Starting RASP run"
+ },
+ {
+  "time":"2018/03/17 13:10:45",
+  "type":"OK",
+  "message":"[PNW.d2] Started d2 tasks"
+ },
+ {
+  "time":"2018/03/17 13:10:51",
+  "type":"OK",
+  "message":"[PNW.d2] Started generating BLIPSPOTS"
+ },
+ {
+  "time":"2018/03/17 13:16:06",
+  "type":"ERROR",
+  "message":"[PNW.d2] Error generating BLIPSPOTS"
+ },
+ {
+  "time":"2018/03/17 13:16:09",
+  "type":"OK",
+  "message":"[PNW.d2] Started generating WINDGRAMS"
+ },
+ {
+  "time":"2018/03/17 13:18:50",
+  "type":"OK",
+  "message":"[PNW.d2] Finished generating WINDGRAMS"
+ },
+ {
+  "time":"2018/03/17 13:18:52",
+  "type":"OK",
+  "message":"[PNW.d2] Started plot cropping"
+ },
+ {
+  "time":"2018/03/17 13:20:03",
+  "type":"OK",
+  "message":"[PNW.d2] Finished plot cropping"
+ },
+ {
+  "time":"2018/03/17 13:20:06",
+  "type":"OK",
+  "message":"[PNW.d2] All tasks finished in 00:09:21"
+ },
+ {
+  "time":"2018/03/17 13:25:11",
+  "type":"OK",
+  "message":"[BLIPSPOT] Uploaded 242 files (2.2MiB) in 00:14:17"
+ },
+ {
+  "time":"2018/03/17 13:30:04",
+  "type":"WARNING",
+  "message":"[RASP-PNW]: Detected errors during RASP run"
+ },
+ {
+  "time":"2018/03/17 13:30:06",
+  "type":"OK",
+  "message":"[RASP-PNW]: Finished run in 00:19:19"
+ },
+ {
+  "time":"2018/03/17 13:30:08",
+  "type":"OK",
+  "message":"[RUN] Starting job 18z-TIGER-WINDOW"
+ },
+ {
+  "time":"2018/03/17 13:30:10",
+  "type":"OK",
+  "message":"[RASP-PNW.TIGER]: Starting nested run"
+ },
+ {
+  "time":"2018/03/17 13:30:08",
+  "type":"OK",
+  "message":"[PNW.w2] Started w2 tasks"
+ },
+ {
+  "time":"2018/03/17 13:30:15",
+  "type":"OK",
+  "message":"[PNW.w2] Started generating BLIPSPOTS"
+ },
+ {
+  "time":"2018/03/17 13:31:50",
+  "type":"ERROR",
+  "message":"[PNW.w2] Error generating BLIPSPOTS"
+ },
+ {
+  "time":"2018/03/17 13:31:53",
+  "type":"OK",
+  "message":"[PNW.w2] Started generating WINDGRAMS"
+ },
+ {
+  "time":"2018/03/17 13:32:46",
+  "type":"OK",
+  "message":"[PNW.w2] Finished generating WINDGRAMS"
+ },
+ {
+  "time":"2018/03/17 13:32:49",
+  "type":"OK",
+  "message":"[PNW.w2] Started cropping plots"
+ },
+ {
+  "time":"2018/03/17 13:33:57",
+  "type":"OK",
+  "message":"[PNW.w2] Finished cropping plots"
+ },
+ {
+  "time":"2018/03/17 13:34:00",
+  "type":"OK",
+  "message":"[PNW.w2] All tasks finished in 00:03:52"
+ },
+ {
+  "time":"2018/03/17 13:35:26",
+  "type":"OK",
+  "message":"[BLIPSPOT] Uploaded 72 files (669KiB) in 00:05:04"
+ },
+ {
+  "time":"2018/03/17 13:37:48",
+  "type":"OK",
+  "message":"[WINDGRAMS] Uploaded 314 files (22MiB) in 00:20:17"
+ },
+ {
+  "time":"2018/03/17 13:41:07",
+  "type":"WARNING",
+  "message":"[RASP-PNW.TIGER]: Detected errors in nested RASP run"
+ },
+ {
+  "time":"2018/03/17 13:41:10",
+  "type":"OK",
+  "message":"[RASP-PNW.TIGER]: Finished nested run in 00:11:00"
+ },
+ {
+  "time":"2018/03/17 13:41:12",
+  "type":"OK",
+  "message":"[TIGER.w2] Started w2 tasks"
+ },
+ {
+  "time":"2018/03/17 13:41:14",
+  "type":"OK",
+  "message":"[TIGER.w2] Started generating BLIPSPOTS"
+ },
+ {
+  "time":"2018/03/17 13:41:19",
+  "type":"ERROR",
+  "message":"[TIGER.w2] Error generating BLIPSPOTS"
+ },
+ {
+  "time":"2018/03/17 13:41:21",
+  "type":"OK",
+  "message":"[TIGER.w2] Started generating WINDGRAMS"
+ },
+ {
+  "time":"2018/03/17 13:41:12",
+  "type":"OK",
+  "message":"[RUN] Starting job 18z-FRASER-WINDOW"
+ },
+ {
+  "time":"2018/03/17 13:41:29",
+  "type":"OK",
+  "message":"[RASP-PNW.FRASER]: Starting nested run"
+ },
+ {
+  "time":"2018/03/17 13:41:30",
+  "type":"OK",
+  "message":"[TIGER.w2] Finished generating WINDGRAMS"
+ },
+ {
+  "time":"2018/03/17 13:41:36",
+  "type":"OK",
+  "message":"[TIGER.w2] Started cropping plots"
+ },
+ {
+  "time":"2018/03/17 13:41:49",
+  "type":"OK",
+  "message":"[TIGER.w2] Finished cropping plots"
+ },
+ {
+  "time":"2018/03/17 13:41:51",
+  "type":"OK",
+  "message":"[TIGER.w2] All tasks finished in 00:00:39"
+ },
+ {
+  "time":"2018/03/17 13:43:03",
+  "type":"OK",
+  "message":"[BLIPSPOT] Uploaded 16 files (151KiB) in 00:01:46"
+ },
+ {
+  "time":"2018/03/17 13:43:24",
+  "type":"OK",
+  "message":"[WINDGRAMS] Uploaded 16 files (1.3MiB) in 00:01:56"
+ },
+ {
+  "time":"2018/03/17 13:45:03",
+  "type":"ERROR",
+  "message":"[RASP-PNW.FRASER]: Run failed with ERROR EXIT"
+ },
+ {
+  "time":"2018/03/17 13:45:05",
+  "type":"ERROR",
+  "message":"Rasp run failed"
+ },
+ {
+  "time":"2018/03/17 13:45:07",
+  "type":"OK",
+  "message":"[RUN] Starting job 18z-PNW+1"
+ },
+ {
+  "time":"2018/03/17 13:45:10",
+  "type":"OK",
+  "message":"[RASP-PNW+1]: Starting RASP run"
+ },
+ {
+  "time":"2018/03/17 14:08:31",
+  "type":"OK",
+  "message":"[CROP] Uploaded 903 files (28MiB) in 00:49:21"
+ },
+ {
+  "time":"2018/03/17 14:11:31",
+  "type":"OK",
+  "message":"[RASP] Uploaded 1058 files (94MiB) in 01:11:58"
+ },
+ {
+  "time":"2018/03/17 14:13:09",
+  "type":"OK",
+  "message":"[RASP-PNW+1]: Finished run in 00:27:59"
+ },
+ {
+  "time":"2018/03/17 14:13:11",
+  "type":"OK",
+  "message":"[PNW+1.d2] Started d2 tasks"
+ },
+ {
+  "time":"2018/03/17 14:13:13",
+  "type":"OK",
+  "message":"[PNW+1.d2] Started generating BLIPSPOTS"
+ },
+ {
+  "time":"2018/03/17 14:13:11",
+  "type":"OK",
+  "message":"[RUN] Starting job 18z-PNW+1-WINDOW"
+ },
+ {
+  "time":"2018/03/17 14:13:19",
+  "type":"OK",
+  "message":"[RASP-PNW+1]: Starting RASP run"
+ },
+ {
+  "time":"2018/03/17 14:17:11",
+  "type":"ERROR",
+  "message":"[PNW+1.d2] Error generating BLIPSPOTS"
+ },
+ {
+  "time":"2018/03/17 14:17:16",
+  "type":"OK",
+  "message":"[PNW+1.d2] Started generating WINDGRAMS"
+ },
+ {
+  "time":"2018/03/17 14:20:45",
+  "type":"OK",
+  "message":"[PNW+1.d2] Finished generating WINDGRAMS"
+ },
+ {
+  "time":"2018/03/17 14:20:50",
+  "type":"OK",
+  "message":"[PNW+1.d2] All tasks finished in 00:07:39"
+ },
+ {
+  "time":"2018/03/17 14:21:16",
+  "type":"OK",
+  "message":"[BLIPSPOT] Uploaded 121 files (298KiB) in 00:08:00"
+ },
+ {
+  "time":"2018/03/17 14:28:08",
+  "type":"OK",
+  "message":"[WINDGRAMS] Uploaded 121 files (11MiB) in 00:08:52"
+ },
+ {
+  "time":"2018/03/17 14:46:50",
+  "type":"OK",
+  "message":"[RASP-PNW+1]: Finished run in 00:33:31"
+ },
+ {
+  "time":"2018/03/17 14:46:52",
+  "type":"OK",
+  "message":"[RUN] Starting job 18z-TIGER+1-WINDOW"
+ },
+ {
+  "time":"2018/03/17 14:46:55",
+  "type":"OK",
+  "message":"[RASP-PNW+1.TIGER+1]: Starting nested run"
+ },
+ {
+  "time":"2018/03/17 14:46:52",
+  "type":"OK",
+  "message":"[PNW+1.w2] Started w2 tasks"
+ },
+ {
+  "time":"2018/03/17 14:47:01",
+  "type":"OK",
+  "message":"[PNW+1.w2] Started generating BLIPSPOTS"
+ },
+ {
+  "time":"2018/03/17 14:48:18",
+  "type":"ERROR",
+  "message":"[PNW+1.w2] Error generating BLIPSPOTS"
+ },
+ {
+  "time":"2018/03/17 14:48:24",
+  "type":"OK",
+  "message":"[PNW+1.w2] Started generating WINDGRAMS"
+ },
+ {
+  "time":"2018/03/17 14:49:37",
+  "type":"OK",
+  "message":"[PNW+1.w2] Finished generating WINDGRAMS"
+ },
+ {
+  "time":"2018/03/17 14:49:43",
+  "type":"OK",
+  "message":"[PNW+1.w2] All tasks finished in 00:02:51"
+ },
+ {
+  "time":"2018/03/17 14:50:20",
+  "type":"OK",
+  "message":"[BLIPSPOT] Uploaded 36 files (89KiB) in 00:03:17"
+ },
+ {
+  "time":"2018/03/17 14:52:24",
+  "type":"OK",
+  "message":"[WINDGRAMS] Uploaded 36 files (3.8MiB) in 00:03:16"
+ },
+ {
+  "time":"2018/03/17 15:06:36",
+  "type":"WARNING",
+  "message":"[RASP-PNW+1.TIGER+1]: Detected errors in nested RASP run"
+ },
+ {
+  "time":"2018/03/17 15:06:38",
+  "type":"OK",
+  "message":"[RASP-PNW+1.TIGER+1]: Finished nested run in 00:19:43"
+ },
+ {
+  "time":"2018/03/17 15:06:41",
+  "type":"OK",
+  "message":"[TIGER+1.w2] Started w2 tasks"
+ },
+ {
+  "time":"2018/03/17 15:06:43",
+  "type":"OK",
+  "message":"[TIGER+1.w2] Started generating BLIPSPOTS"
+ },
+ {
+  "time":"2018/03/17 15:06:48",
+  "type":"ERROR",
+  "message":"[TIGER+1.w2] Error generating BLIPSPOTS"
+ },
+ {
+  "time":"2018/03/17 15:06:50",
+  "type":"OK",
+  "message":"[TIGER+1.w2] Started generating WINDGRAMS"
+ },
+ {
+  "time":"2018/03/17 15:06:59",
+  "type":"OK",
+  "message":"[TIGER+1.w2] Finished generating WINDGRAMS"
+ },
+ {
+  "time":"2018/03/17 15:07:01",
+  "type":"OK",
+  "message":"[TIGER+1.w2] All tasks finished in 00:00:20"
+ },
+ {
+  "time":"2018/03/17 15:07:41",
+  "type":"WARNING",
+  "message":"Errors found in run log files"
+ },
+ {
+  "time":"2018/03/17 15:07:44",
+  "type":"OK",
+  "message":"Finished run in 02:37:41"
+ },
+ {
+  "time":"2018/03/17 15:08:09",
+  "type":"OK",
+  "message":"[BLIPSPOT] Uploaded 8 files (20KiB) in 00:01:23"
+ },
+ {
+  "time":"2018/03/17 15:08:26",
+  "type":"OK",
+  "message":"[WINDGRAMS] Uploaded 8 files (868KiB) in 00:01:29"
+ },
+ {
+  "time":"2018/03/17 15:13:46",
+  "type":"OK",
+  "message":"All files uploaded"
+ },
+ {
+  "time":"2018/03/17 15:13:49",
+  "type":"OK",
+  "message":"[UPLOAD] Total files: 2951"
+ },
+ {
+  "time":"2018/03/17 15:13:51",
+  "type":"OK",
+  "message":"[UPLOAD] Total size: 163MiB"
+ }
+]

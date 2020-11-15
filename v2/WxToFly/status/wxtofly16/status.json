@@ -1,0 +1,18 @@
+
+[
+ {
+  "time":"2018/03/08 17:30:02",
+  "type":"OK",
+  "message":"Starting run for 0z"
+ },
+ {
+  "time":"2018/03/08 17:30:06",
+  "type":"OK",
+  "message":"[RUN] Starting job 0z-PNW+1"
+ },
+ {
+  "time":"2018/03/08 17:30:08",
+  "type":"OK",
+  "message":"[RASP-PNW+1]: Starting RASP run"
+ }
+]

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>WxToFly - Windgrams</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/v2/css/windgrams.css?20200325" rel="stylesheet">
+	<link href="/v2/css/blipspot.css" rel="stylesheet">
+	<link href="/v2/css/wind.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+		  <div>
+		  <span id="sidebar_togle" class="navbar-toggle pull-left glyphicon glyphicon glyphicon-chevron-right visible-xs" data-toggle="offcanvas" style="color:white"></span>
+          <span class="navbar-brand">Windgrams</span>
+		  </div>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+			<li>
+				<a href="/v2"><span class="glyphicon glyphicon-home"></span> Home</a>
+			</li>
+			<li class="divider"></li>
+			<li>
+				<a class="link_explorer menu-item" href="/v2/explorer.html"><span class="glyphicon glyphicon-globe"></span> Explorer</a>
+			</li>    
+			<li class="disabled">
+				<a class="link_nws menu-item" href="#" target="_blank"><span class="glyphicon glyphicon-record"></span> NWS Point-Forecast</a>
+			</li>    
+			<li class="divider"></li>
+			<li>
+				<a data-toggle="modal" data-target="#modal_disclaimer" href="#" class="menu-item"><span class="glyphicon glyphicon-question-sign"></span> Help</a>
+			</li>
+			<li>
+				<a data-toggle="modal" data-target="#modal_disclaimer" href="#" class="menu-item"><span class="glyphicon glyphicon-info-sign"></span> Disclaimer</a>
+			</li>
+			<li>
+				<a id="operator_email" class="menu-item"><span class="glyphicon glyphicon-envelope"></span> Contact</a>
+			</li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div><!-- /.container -->
+    </nav><!-- /.navbar -->
+
+	<!-- Windgrams content-->
+    <div class="container-fluid">
+	<div class="row row-offcanvas row-offcanvas-left">
+	
+        <div class="col-xs-6 sidebar-offcanvas" id="sidebar">
+			<div id="sidebar_items" class="list-group">
+			</div>
+        </div><!--/.sidebar-offcanvas-->
+
+		<div class="col-xs-12 col-sm-9">
+			<div id="windgrams" style="display: none">
+				<div id="windgramsBody">
+					
+					<!-- div class="alert alert-danger" role="alert">
+					  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+					  <span class="sr-only">Error:</span>
+					  3-day and high resolution weather modeling stopped working 10/23/2020. The issue is being investigated.
+					</div-->
+					
+					<div id="windgram1">
+						<p><img id="imgWindgram1" src="#" class="windgram-image"></img></p>
+					</div>
+					<div id="blipspot1" style="display:none">
+						<table id="table_blipspot1" class="table table-responsive table-blipspot"></table>
+					</div>
+					<div id="windgram2">
+						<p><img id="imgWindgram2" src="#" class="windgram-image"></img></p>
+					</div>
+					<div id="blipspot2" style="display:none">
+						<table id="table_blipspot2" class="table table-responsive table-blipspot"></table>
+					</div>
+					<div id="windgram3">
+						<p><img id="imgWindgram3" src="#" class="windgram-image"></img></p>
+					</div>
+					<div id="blipspot3" style="display:none">
+						<table id="table_blipspot3" class="table table-responsive table-blipspot"></table>
+					</div>
+					<div id="windgram4">
+						<p><img id="imgWindgram4" src="#" class="windgram-image"></img></p>
+					</div>
+					<div id="blipspot4" style="display:none">
+						<table id="table_blipspot4" class="table table-responsive table-blipspot"></table>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div><!--/row-->
+    </div><!--/.container-->	
+	
+	<!-- Modal disclaimer -->
+	<div id="modal_disclaimer" class="modal fade" role="dialog">
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="/v2/scripts/jquery.touchSwipe.min.js"></script>
+	<script src="/scripts/wxtofly.js?20200323"></script>
+	<script src="/v2/scripts/blipspotParam.js?20200504"></script>
+	<script src="/v2/scripts/blipspots.js?20200504"></script>
+	<script src="/v2/scripts/windgrams.js?20200831"></script>
+	<script src="/scripts/date.format.js"></script>
+	<script type="text/javascript">
+		var sc_project=5298726; 
+		var sc_invisible=1; 
+		var sc_partition=59; 
+		var sc_click_stat=0; 
+		var sc_security="fd63fa1a"; 
+		var sc_text=2; 
+	</script>
+	<script src="http://www.statcounter.com/counter/counter.js"></script>
+	<script src="/scripts/analytics.js"></script>
+	
+</body>
+</html>

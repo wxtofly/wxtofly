@@ -1,0 +1,163 @@
+{
+  "@context": [
+    "https://raw.githubusercontent.com/geojson/geojson-ld/master/contexts/geojson-base.jsonld",
+    {
+      "wx": "https://api.weather.gov/ontology#",
+      "s": "https://schema.org/",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "unit": "http://codes.wmo.int/common/unit/",
+      "@vocab": "https://api.weather.gov/ontology#",
+      "geometry": {
+        "@id": "s:GeoCoordinates",
+        "@type": "geo:wktLiteral"
+      },
+      "city": "s:addressLocality",
+      "state": "s:addressRegion",
+      "distance": {
+        "@id": "s:Distance",
+        "@type": "s:QuantitativeValue"
+      },
+      "bearing": {
+        "@type": "s:QuantitativeValue"
+      },
+      "value": {
+        "@id": "s:value"
+      },
+      "unitCode": {
+        "@id": "s:unitCode",
+        "@type": "@id"
+      },
+      "forecastOffice": {
+        "@type": "@id"
+      },
+      "forecastGridData": {
+        "@type": "@id"
+      },
+      "publicZone": {
+        "@type": "@id"
+      },
+      "county": {
+        "@type": "@id"
+      }
+    }
+  ],
+  "id": "https://api.weather.gov/stations/KSEA/observations/2019-06-14T16:53:00+00:00",
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      -122.3,
+      47.45
+    ]
+  },
+  "properties": {
+    "@id": "https://api.weather.gov/stations/KSEA/observations/2019-06-14T16:53:00+00:00",
+    "@type": "wx:ObservationStation",
+    "elevation": {
+      "value": 137,
+      "unitCode": "unit:m"
+    },
+    "station": "https://api.weather.gov/stations/KSEA",
+    "timestamp": "2019-06-14T16:53:00+00:00",
+    "rawMessage": "KSEA 141653Z 22008KT 10SM SCT012 OVC019 15/09 A3010 RMK AO2 SLP197 T01500094",
+    "textDescription": "Cloudy",
+    "icon": "https://api.weather.gov/icons/land/day/ovc?size=medium",
+    "presentWeather": [],
+    "temperature": {
+      "value": 15,
+      "unitCode": "unit:degC",
+      "qualityControl": "qc:V"
+    },
+    "dewpoint": {
+      "value": 9.400000000000034,
+      "unitCode": "unit:degC",
+      "qualityControl": "qc:V"
+    },
+    "windDirection": {
+      "value": 220,
+      "unitCode": "unit:degree_(angle)",
+      "qualityControl": "qc:V"
+    },
+    "windSpeed": {
+      "value": 4.1,
+      "unitCode": "unit:m_s-1",
+      "qualityControl": "qc:V"
+    },
+    "windGust": {
+      "value": null,
+      "unitCode": "unit:m_s-1",
+      "qualityControl": "qc:Z"
+    },
+    "barometricPressure": {
+      "value": 101930,
+      "unitCode": "unit:Pa",
+      "qualityControl": "qc:V"
+    },
+    "seaLevelPressure": {
+      "value": 101970,
+      "unitCode": "unit:Pa",
+      "qualityControl": "qc:V"
+    },
+    "visibility": {
+      "value": 16090,
+      "unitCode": "unit:m",
+      "qualityControl": "qc:C"
+    },
+    "maxTemperatureLast24Hours": {
+      "value": null,
+      "unitCode": "unit:degC",
+      "qualityControl": null
+    },
+    "minTemperatureLast24Hours": {
+      "value": null,
+      "unitCode": "unit:degC",
+      "qualityControl": null
+    },
+    "precipitationLastHour": {
+      "value": null,
+      "unitCode": "unit:m",
+      "qualityControl": "qc:Z"
+    },
+    "precipitationLast3Hours": {
+      "value": null,
+      "unitCode": "unit:m",
+      "qualityControl": "qc:Z"
+    },
+    "precipitationLast6Hours": {
+      "value": null,
+      "unitCode": "unit:m",
+      "qualityControl": "qc:Z"
+    },
+    "relativeHumidity": {
+      "value": 69.19400969253094,
+      "unitCode": "unit:percent",
+      "qualityControl": "qc:C"
+    },
+    "windChill": {
+      "value": null,
+      "unitCode": "unit:degC",
+      "qualityControl": "qc:V"
+    },
+    "heatIndex": {
+      "value": null,
+      "unitCode": "unit:degC",
+      "qualityControl": "qc:V"
+    },
+    "cloudLayers": [
+      {
+        "base": {
+          "value": 370,
+          "unitCode": "unit:m"
+        },
+        "amount": "SCT"
+      },
+      {
+        "base": {
+          "value": 580,
+          "unitCode": "unit:m"
+        },
+        "amount": "OVC"
+      }
+    ]
+  }
+}

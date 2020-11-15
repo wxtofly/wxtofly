@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>WxToFly - Installation</title>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/v2/css/wxtofly.css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+</head>
+<body>
+
+<div class="container">
+
+	<nav class="navbar navbar-default sidebar" role="navigation">
+	
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<div class="navbar-brand">WxToFly</div>			
+		</div>
+		
+		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li>
+					<a href="/v2"><span class="glyphicon glyphicon-home"></span> Home</a>
+				</li>
+				<li>
+					<a href="/v2/windgrams.html"><span class="glyphicon glyphicon-picture"></span> Windgrams</a>
+				</li>        
+				<li>
+					<a href="/v2/explorer.html"><span class="glyphicon glyphicon-globe"></span> Explorer</a>
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
+					<ul class="dropdown-menu forAnimate" role="menu">
+						<li>
+							<a href="/v2/status.html"><span class="glyphicon glyphicon-dashboard"></span> Run Status</a>
+						</li>
+						<li class="active">
+							<a href="/v2/install.html"><span class="glyphicon glyphicon glyphicon-cd"></span> Installation</a>
+						</li>
+						<li class="divider"></li>
+						<li>
+							<a data-toggle="modal" data-target="#modal_disclaimer" href="#"><span class="glyphicon glyphicon-info-sign"></span> Disclaimer</a>
+						</li>
+						<li>
+							<a id="operator_email"><span class="glyphicon glyphicon-envelope"></span> Contact</a>
+						</li>
+						<li>
+							<a href="/v2/contribute.html"><span class="glyphicon glyphicon-heart"></span> Contribute</a>
+						</li>
+					</ul>
+				</li>          
+			</ul>
+		</div>
+		
+	</div>
+	
+	</nav>
+
+	
+	<div class="well">
+
+	<h3>WxToFly Installation</h3>
+	<p>This document describes installation of WXTOFLY RASP site and scripts feeding content to <a href="http://wxtofly.net">http://wxtofly.net</a> website</p>
+
+	<h4>Hardware</h4>
+
+	<p>This is recommended minimum setup</p>
+
+	<ul>
+	<li>CPU Intel i7</li>
+	<li>HDD 100GB min</li>
+	<li>8GB RAM</li>
+	</ul>
+
+	<p>Current Jiri's installation is running in a Hyper-V virtual machine with:</p>
+
+	<ul>
+	<li>4 virtual CPUs</li>
+	<li>8GB RAM</li>
+	<li>128GB VHD</li>
+	</ul>
+
+	<p>Jiri's host machine:</p>
+
+	<ul>
+	<li>Intel i7 6700k</li>
+	<li>SSD 1TB</li>
+	<li>HDD 2TB</li>
+	<li>32GB RAM</li>
+	<li>NVIDIA GPU</li>
+	</ul>
+
+	<p>Note: Current version of Hyper-V Integration Services for Linux do not support access to GPU via RemoteFX feature. It might be possible using pass-through PCI setup</p>
+
+	<h4>OS</h4>
+
+	<p>Currently the installation scripts support only 64-bit Ubuntu and were tested on Desktop version 14.04 and 16.10 and Server version 16.10. Adding support for other distributions should be possible.</p>
+
+	<h4>Installation instructions</h4>
+
+	<ul>
+	<li>Select a version of Ubuntu and download the setup ISO from <a href="https://www.ubuntu.com/download">https://www.ubuntu.com/download</a>. Direct links to images used for testing:
+		<ul>
+		<li><a href="http://mirror.pnl.gov/releases/16.10/ubuntu-16.10-desktop-amd64.iso">ubuntu-16.10-desktop-amd64.iso</a></li>
+		<li><a href="http://mirror.pnl.gov/releases/14.04/ubuntu-14.04.5-desktop-amd64.iso">ubuntu-14.04.5-desktop-amd64.iso</a></li>
+		<li><a href="http://mirror.pnl.gov/releases/16.10/ubuntu-16.10-server-amd64.iso">ubuntu-16.10-server-amd64.iso</a></li>
+		</ul>
+	</li>
+	<li>Install the OS on a physical or virtual machine</li>
+	<li>After installation, login using credentials created during OS install. This must be the administrator user.</li>
+	<li>
+		Decide on BASEDIR directory name for the RASP site installation and create it under the home directory, eg. myrasp
+		<br>
+		<code>mkdir ~/myrasp</code>
+	</li>
+	<li>
+		Download installation package from <a href="http://wxtofly.net/install/wxtofly.tgz">http://wxtofly.net/install/wxtofly.tgz</a> and save it in the BASEDIR directory
+		<br>
+		<code>curl –o ~/myrasp/wxtofly.tgz http://wxtofly.net/install/wxtofly.tgz</code>
+	</li>
+	<li>
+		Change directory to BASEDIR and extract files from instalation package
+		<br>
+		<code>cd ~/myrasp</code>
+		<br>
+		<code>tar xvzf wxtofly.tgz</code>
+	</li>
+	<li>
+		Run installation script providing path to BASEDIR as the only argument
+		<br>
+		<code>bash INSTALL/install_wxtofly.sh ~/myrasp</code>
+	</li>
+	<li>The installation script goes through multiple steps. Installation of dependent packages requires running as administrator. When prompted enter the password of the currently logged on user.</li>
+	<li>
+		When the installation completes successfully the script will proceeds to setting up the site:
+		<ul>
+		<li>CRON – if selected this will create a cron job to run the RASP site.</li>
+		<li>Uploading to wxtofly.net - if selected the script will asks for ftp access credentials and configures the site to upload run output plots to the website.</li>
+		</ul>
+	</li>
+	</ul>
+
+	<p>See WxToFly guide document for details about the site operation</p>
+
+	<h4>References</h4>
+	<ul>
+	<li>
+		DrJack RASP installation instructions: 
+		<br/>
+		<a href="http://www.drjack.info/twiki/bin/view/RASPop/ProgramOverview">http://www.drjack.info/twiki/bin/view/RASPop/ProgramOverview</a>
+	</li>
+	<li>
+		RASP support forums: 
+		<br/>
+		<a href="http://www.drjack.info/cgi-bin/rasp-forum.cgi">http://www.drjack.info/cgi-bin/rasp-forum.cgi</a>
+	</li>
+	<li>
+		TJ Olney RASP installation instructions: 
+		<br/>
+		<a href="http://wxtofly.net/rasp_scripts/index.html">http://wxtofly.net/rasp_scripts/index.html</a>
+	</li>
+	</ul>
+
+	</br>
+	
+	</div>
+
+	<!-- Modal disclaimer -->
+	<div id="modal_disclaimer" class="modal fade" role="dialog">
+	</div>
+	
+</div>
+
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter.js"></script>
+<script type="text/javascript" src="/scripts/analytics.js"></script>
+<script type="text/javascript" src="/scripts/wxtofly.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="en" style="overflow-x: hidden; margin-top: 30px;">
+<head>
+    <title>WxToFly - Windgrams</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/font-awesome/css/all.min.css" rel="stylesheet">
+    <link href="css/wxtofly.css" rel="stylesheet">
+
+    <!-- site icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="css/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="css/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="css/img/favicon-16x16.png">
+    <link rel="mask-icon" href="css/img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body class="page-windgrams">
+
+    <nav id="navbar"></nav>
+
+    <div class="container-windgrams">
+        <div class="container-offcanvas">
+            <div id="windgrams-menu"></div>
+            <div id="windgrams" style="display: none"></div>
+        </div>
+    </div>
+
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="lib/jquery-touchswipe/jquery.touchSwipe.min.js"></script>
+    <script src="lib/noaajs/noaa.js"></script>
+    <script src="lib/d3/d3.js"></script>
+    <script src="lib/moment/moment.min.js"></script>
+    <script src="lib/spin.js/spin.min.js"></script>
+    <script src="lib/suncalc/suncalc.js"></script>
+
+    <script src="js/units.js"></script>
+    <script src="js/rasp.variable.js"></script>
+    <script src="js/rasp.variables.js"></script>
+    <script src="js/util.local-storage.js"></script>
+    <script src="js/noaa.variable.js"></script>
+    <script src="js/noaa.chart.grid-point.js"></script>
+    <script src="js/noaa.control.forecast-chart.js"></script>
+    <script src="js/noaa.control.forecast.js"></script>
+    <script src="js/noaa.control.forecast-period.js"></script>
+    <script src="js/wxtofly.utils.js"></script>
+    <script src="js/wxtofly.run-jobs.js"></script>
+    <script src="js/wxtofly.sites-geojson.js"></script>
+    <script src="js/wxtofly.control.spinner.js"></script>
+    <script src="js/wxtofly.control.windgrams-menu.js"></script>
+    <script src="js/wxtofly.control.windgrams.js"></script>
+    <script src="js/wxtofly.control.blipspot.js"></script>
+    <script src="js/wxtofly.control.navbar.js"></script>
+    <script src="js/wxtofly.dialog.disclaimer.js"></script>
+    <script src="js/wxtofly.dialog.settings.js"></script>
+    <script src="js/wxtofly.page.windgrams.js"></script>
+    <script>
+        PageWindgrams({
+            'blipspot': false,
+            'windgramLoad': function (e) {
+                console.log('windgramLoad start');
+                var row,
+                    v2Url,
+                    date,
+                    inserted = false,
+                    headerRow = e.container.find('div#compare-header');
+
+                if (headerRow.length == 0) {
+                    e.container.append(
+                        '<div id="compare-header" style="display:flex">' +
+                        '<div style="flex:1; text-align: center;"><h6 class="mb-1">New Version</h6></div>' +
+                        '<div style="flex:1; text-align: center;"><h6 class="mb-1">Old Version</h6></div>' +
+                        '</div>');
+                }
+
+                row = $('<div style="display:flex" data-date="' + e.date + '"></div>');
+                row.append('<div>' + e.img[0].outerHTML + '</div>');
+
+                //http://wxtofly.net/windgrams/2019-05-24_BJ_windgram.png?1558710261494
+
+                v2Url = 'http://wxtofly.net/windgrams/';
+                v2Url += [
+                    [e.date.slice(0, 4), e.date.slice(4, 6), e.date.slice(6)].join('-'),
+                    e.site.name,
+                    'windgram.png?' + (new Date()).getTime()].join('_');
+
+                row.append('<div><img src="' + v2Url + '"></img></div>');
+                e.img.remove();
+
+                $('div[data-date]', e.container).each(function () {
+                    date = $(this).data('date');
+                    if (date > e.date) {
+                        row.insertBefore(this);
+                        inserted = true;
+                        return false;
+                    }
+                });
+
+                if (!inserted) {
+                    e.container.append(row);
+                }
+
+                console.log('windgramLoad end');
+            }
+        });
+    </script>
+
+</body>
+</html>

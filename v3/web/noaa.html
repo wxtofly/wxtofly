@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WxToFly - NOAA</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/font-awesome/css/all.min.css" rel="stylesheet">
+    <link href="lib/leaflet/leaflet.css" rel="stylesheet">
+    <link href="lib/leaflet-search/leaflet-search.min.css" rel="stylesheet">
+    <link href="css/wxtofly.css" rel="stylesheet">
+
+    <!-- site icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="css/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="css/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="css/img/favicon-16x16.png">
+    <link rel="mask-icon" href="css/img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body class="page-noaa">
+
+    <div id="toolbar-noaa" class="leaflet-control leaflet-control-toolbar-panel">
+        <div id="noaa" class="leaflet-control-toolbar-panel-body navbar navbar-light">
+            <button id="button-point-forecast">Point Forecast</button>
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="lib/noaajs/noaa.js"></script>
+    <script src="lib/d3/d3.js"></script>
+    <script src="lib/moment/moment.min.js"></script>
+    <script src="lib/spin.js/spin.min.js"></script>
+    <script src="lib/suncalc/suncalc.js"></script>
+    <script src="lib/leaflet/leaflet.js"></script>
+
+    <script src="js/units.js"></script>
+    <script src="js/util.local-storage.js"></script>
+
+    <script src="js/noaa.variable.js"></script>
+    <script src="js/noaa.chart.hourly.js"></script>
+    <script src="js/noaa.control.hourly-chart.js"></script>
+    <script src="js/noaa.control.forecast.js"></script>
+    <script src="js/noaa.control.forecast-period.js"></script>
+
+    <script src="js/leaflet.control.persistent-layers.js"></script>
+    <script src="js/leaflet.providers.js"></script>
+    <script src="js/leaflet.map.ordered-controls.js"></script>
+
+    <script src="js/wxtofly.utils.js"></script>
+    <script src="js/wxtofly.run-jobs.js"></script>
+    <script src="js/wxtofly.sites-geojson.js"></script>
+    <script src="js/wxtofly.control.spinner.js"></script>
+    <script src="js/wxtofly.control.windgrams-menu.js"></script>
+    <script src="js/wxtofly.control.windgrams.js"></script>
+    <script src="js/wxtofly.control.blipspot.js"></script>
+    <script src="js/wxtofly.control.navbar.js"></script>
+    <script src="js/wxtofly.dialog.disclaimer.js"></script>
+    <script src="js/wxtofly.dialog.settings.js"></script>
+    <script src="js/wxtofly.map.js"></script>
+
+</body>
+</html>

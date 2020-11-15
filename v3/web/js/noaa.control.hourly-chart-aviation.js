@@ -1,0 +1,3 @@
+Ceiling Height
+Visibility
+Thunder Potential

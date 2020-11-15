@@ -1,0 +1,20 @@
+{
+  "name": "wxtofly-web",
+  "version": "3.0.0",
+  "description": "",
+  "main": "Gruntfile.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jiri Richter",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.0.4",
+    "grunt-contrib-less": "^2.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "jit-grunt": "^0.10.0"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "@context": [],
+  "@graph": [
+    {
+      "@id": "https://api.weather.gov/offices/SEW/headlines/4ada33f152362da24ebc7f564ca4a7ca",
+      "id": "4ada33f152362da24ebc7f564ca4a7ca",
+      "office": "https://api.weather.gov/offices/SEW",
+      "important": false,
+      "issuanceTime": "2019-06-12T20:01:00+00:00",
+      "link": "http://www.wrh.noaa.gov/sew/KSEA_FAQ.pdf",
+      "name": "ksea_faq",
+      "title": "Seattle-Tacoma International Airportâ€™s ASOS FAQ",
+      "summary": null,
+      "content": "<a href=\"www.wrh.noaa.gov%2Fsew%2FKSEA_FAQ.pdf\">Seattle-Tacoma International Airportâ€™s ASOS FAQ</a>"
+    }
+  ]
+}

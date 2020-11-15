@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WxToFly - Magnolia Boulevard Viewpoint</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/font-awesome/css/all.min.css" rel="stylesheet">
+    <link href="css/wxtofly.css" rel="stylesheet">
+
+    <!-- site icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="css/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="css/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="css/img/favicon-16x16.png">
+    <link rel="mask-icon" href="css/img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body class="page-point">
+
+    <div class="container pb-1">
+        <h5 class="mb-1">Magnolia Boulevard Viewpoint</h5>
+        <div id="point-forecast"></div>
+    </div>
+
+    <script src="lib/jquery/jquery.min.js?20201115"></script>
+    <script src="lib/bootstrap/bootstrap.bundle.min.js?20201115"></script>
+    <script src="lib/noaajs/noaa.js?20201115"></script>
+    <script src="lib/d3/d3.js?20201115"></script>
+    <script src="lib/moment/moment.min.js?20201115"></script>
+    <script src="lib/spin.js/spin.min.js?20201115"></script>
+    <script src="lib/suncalc/suncalc.js?20201115"></script>
+    <script src="lib/leaflet/leaflet.js?20201115"></script>
+    <script src="lib/leaflet-spin/leaflet.spin.min.js?20201115"></script>
+    <script src="lib/leaflet-search/leaflet-search.src.js?20201115"></script>
+
+    <script src="js/units.js?20201115"></script>
+    <script src="js/util.local-storage.js?20201115"></script>
+
+    <script src="js/noaa.variable.js?20201115"></script>
+    <script src="js/noaa.text-products.js?20201115"></script>
+    <script src="js/noaa.chart.js?20201115"></script>
+    <script src="js/noaa.chart.observations.js?20201115"></script>
+    <script src="js/noaa.chart.hourly.js?20201115"></script>
+    <script src="js/noaa.chart.hourly-base.js?20201115"></script>
+    <script src="js/noaa.chart.hourly-index.js?20201115"></script>
+    <script src="js/noaa.chart.hourly-length.js?20201115"></script>
+    <script src="js/noaa.chart.hourly-temperature.js?20201115"></script>
+    <script src="js/noaa.chart.hourly-tide.js?20201115"></script>
+    <script src="js/noaa.chart.hourly-pressure.js?20201115"></script>
+    <script src="js/noaa.chart.hourly-propability.js?20201115"></script>
+    <script src="js/noaa.chart.hourly-swell.js?20201115"></script>
+    <script src="js/noaa.chart.hourly-weather.js?20201115"></script>
+    <script src="js/noaa.chart.hourly-wave.js?20201115"></script>
+    <script src="js/noaa.chart.hourly-wind.js?20201115"></script>
+    <script src="js/noaa.control.js?20201115"></script>
+    <script src="js/noaa.control.error.js?20201115"></script>
+    <script src="js/noaa.control.chart.js?20201115"></script>
+    <script src="js/noaa.control.station-chart.js?20201115"></script>
+    <script src="js/noaa.control.hourly-chart.js?20201115"></script>
+    <script src="js/noaa.control.forecast.js?20201115"></script>
+    <script src="js/noaa.control.forecast-period.js?20201115"></script>
+    <script src="js/noaa.control.forecast-discussion.js?20201115"></script>
+
+    <script src="js/leaflet.control.persistent-layers.js?20201115"></script>
+    <script src="js/leaflet.providers.js?20201115"></script>
+    <script src="js/leaflet.map.ordered-controls.js?20201115"></script>
+
+    <script src="js/wxtofly.utils.js?20201115"></script>
+    <script src="js/wxtofly.run-jobs.js?20201115"></script>
+    <script src="js/wxtofly.sites-geojson.js?20201115"></script>
+    <script src="js/wxtofly.control.spinner.js?20201115"></script>
+    <script src="js/wxtofly.control.windgrams-menu.js?20201115"></script>
+    <script src="js/wxtofly.control.windgrams.js?20201115"></script>
+    <script src="js/wxtofly.control.blipspot.js?20201115"></script>
+    <script src="js/wxtofly.control.navbar.js?20201115"></script>
+    <script src="js/wxtofly.control.point-forecast.js?20201115"></script>
+    <script src="js/wxtofly.control.collapse-button.js?20201115"></script>
+    <script src="js/wxtofly.dialog.disclaimer.js?20201115"></script>
+    <script src="js/wxtofly.dialog.settings.js?20201115"></script>
+    <script src="js/wxtofly.map.js?20201115"></script>
+
+    <script>
+        const lat = 47.6366657,
+            lon = -122.4071107;
+
+        let pointForecastControl = $('#point-forecast').pointForecast(lat, lon, {
+            'spinner': true,
+            'forecast': {
+                'show': true,
+                'collapse': true
+            },
+            'discussion': {
+                'show': true,
+                'collapse': true
+            },
+            'hourlyChart': {
+                'show': true,
+                'collapse': false,
+                'width': $('.container').width(),
+                'height': window.innerHeight - 59,
+                'charts': {
+                    'surfaceWind': {
+                    },
+                    'tide': {
+                        'refValues': [Units.convert(6).from('ft').to(NOAAVariable.getUnits('tidePrediction'))],
+                        'showRefValueLabel': true,
+                        'showStationInfo': false
+                    },
+                    'precipitationRain': {},
+                    'sky': {},
+                    'temperature': {}
+                }
+            },
+        });
+
+        $(window).on('resize', () => {
+            pointForecastControl.setSize(
+                $('.container').width(),
+                window.innerHeight - 59
+            );
+        });
+
+    </script>
+</body>
+</html>

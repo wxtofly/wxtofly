@@ -1,0 +1,82 @@
+div.job-info {
+    margin-bottom: 4px;
+
+    &>a {
+        color: black;
+        text-decoration: none;
+    }
+
+    .card-header {
+        padding: 4px;
+
+        i {
+            margin-right: 4px;
+        }
+
+        &.job-info-state-failed {
+            &::before {
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                content: "\f06a";
+                color: red;
+                margin-right: 4px;
+            }
+        }
+
+        &.job-info-state-running {
+            &::before {
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                content: "\f70c";
+                margin-right: 4px;
+            }
+        }
+
+        &.job-info-state-finished {
+            &::before {
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                content: "\f058";
+                color: #33cc33;
+                margin-right: 4px;
+            }
+        }
+
+        &.job-info-state-queued {
+            &::before {
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                content: "\f017";
+                margin-right: 4px;
+            }
+        }
+    }
+
+    .card-body {
+        padding: 4px;
+
+        .job-info-name {
+            margin-right: 3px;
+        }
+
+        .job-info-value {
+            font-weight: bold;
+        }
+
+        &.job-info-state-failed {
+            background-color: #ff8c8c;
+        }
+
+        &.job-info-state-running {
+            background-color: #cde5ff;
+        }
+
+        &.job-info-state-finished {
+            background-color: #9afa9b;
+        }
+
+        &.job-info-state-queued {
+            background-color: #e9ecef;
+        }
+    }
+}

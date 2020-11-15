@@ -1,0 +1,220 @@
+body.page-point {
+    width: 100%;
+    height: 100%;
+
+    div#map {
+        width: 100%;
+        height: 100%;
+    }
+
+    .leaflet-popup-content {
+        margin: 10px;
+    }
+
+    .modal-popup {
+        position: absolute;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+
+        .container {
+            height: 100%;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .popup-station {
+        font-size: 12px;
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        button.close {
+            position: absolute;
+            right: 0;
+            top: -7px;
+            width: 30px;
+            height: 30px;
+        }
+
+        .header {
+            margin-bottom: 5px;
+
+            span.station-id {
+                font-weight: bold;
+                margin-right: 3px;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .popup-point-forecast {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        position: relative;
+
+        button.close {
+            position: absolute;
+            right: 0px;
+        }
+
+        ul.nav-tabs {
+            padding-right: 20px;
+            margin-bottom: 5px;
+        }
+
+        .tab-content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+
+            .tab-pane {
+                height: 100%;
+            }
+        }
+
+        .noaa-control.forecast {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+            & > div {
+                flex-shrink: 0;
+            }
+
+            .details {
+                height: 100%;
+                flex-shrink: 1;
+                overflow-y: auto;
+            }
+        }
+
+        .noaa-control.discussion {
+            padding: 0;
+        }
+
+        .nav-link {
+            font-size: 12px;
+            padding: 10px;
+            border: none;
+            color: #adb5bd;
+
+            &:hover {
+                border-bottom: 2px #007bff solid;
+            }
+
+            &.active {
+                color: #495057;
+                border-bottom: 2px #007bff solid;
+            }
+        }
+
+        .point-info {
+            font-size: 11px;
+
+            span.name {
+                font-weight: bold;
+                margin-right: 5px;
+            }
+        }
+
+        .station-list {
+            font-size: 12px;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 600px;
+            height: 100%;
+
+            ul {
+                width: 100%;
+                overflow: auto;
+                padding: 0;
+
+                li {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 5px;
+
+                    &:nth-child(odd) {
+                        background: #f8f9fa;
+                    }
+
+                    &.header {
+                        font-weight: bold;
+                        background: white;
+                        border-bottom: 1px solid #e9ecef;
+                        position: sticky;
+                        top: 0;
+                    }
+
+                    span.station-id {
+                        font-weight: bold;
+                        margin-right: 3px;
+                        text-transform: uppercase;
+                    }
+
+                    span.distance {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+
+    .marker-station {
+        border: solid black 1px;
+        border-radius: 10px;
+    }
+
+    .marker-station-noaa-api {
+        background-color: red;
+    }
+
+    .marker-station-ndbc {
+        background-color: #55a3fa;
+
+        &.marker-station-buoy {
+            background-color: #ffc107;
+        }
+
+        &.marker-station-fixed {
+            //background-color: #ffc107;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+
+        div.container {
+            padding: 3px;
+        }
+
+        .modal-popup {
+            padding: 0;
+
+            .container {
+                padding: 5px;
+                border-radius: 0;
+            }
+
+            .nav-link {
+                padding: 5px;
+            }
+        }
+
+        .modal-popup-point-forecast {
+            .nav-link {
+                padding: 5px;
+            }
+        }
+    }
+}

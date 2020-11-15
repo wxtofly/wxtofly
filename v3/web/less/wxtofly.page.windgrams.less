@@ -1,0 +1,63 @@
+body.page-windgrams {
+    overflow-x: hidden;
+    margin-top: 26px;
+
+    nav#navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    div.container-windgrams {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    div.container-offcanvas {
+        display: flex;
+    }
+
+    div#windgrams-menu {
+        padding: 5px;
+        width: 250px;
+        flex: 0 0 auto;
+    }
+
+    button[data-toggle="offcanvas"] i {
+        height: 1.5em;
+        line-height: 1.5em;
+    }
+
+    a#button-noaa-forecast {
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    div#windgrams-body {
+        width: calc(100% - 250px);
+    }
+
+    @media screen and (max-width: 767px) {
+
+        div.container-offcanvas {
+            position: relative;
+            left: -250px;
+            -webkit-transition: all .25s ease-out;
+            -o-transition: all .25s ease-out;
+            transition: all .25s ease-out;
+        }
+
+        div.container-offcanvas.active {
+            left: 0px;
+        }
+
+        div#windgrams-body {
+            min-width: 100%;
+        }
+
+        div#windgrams {
+            min-width: 100%;
+        }
+    }
+}

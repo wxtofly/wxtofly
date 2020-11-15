@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WxToFly - Map</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/font-awesome/css/all.min.css" rel="stylesheet">
+    <link href="lib/leaflet/leaflet.css" rel="stylesheet">
+    <link href="css/wxtofly.css" rel="stylesheet">
+
+    <!-- site icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="css/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="css/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="css/img/favicon-16x16.png">
+    <link rel="mask-icon" href="css/img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body class="page-map">
+
+    <div id="toolbar-menu" class="leaflet-control leaflet-control-toolbar-panel">
+        <div id="menu" class="leaflet-control-toolbar-panel-body navbar navbar-light">
+        </div>
+    </div>
+
+    <div id="toolbar-windgrams" class="leaflet-control leaflet-control-toolbar-panel">
+        <div id="windgrams-menu" class="leaflet-control-toolbar-panel-body"></div>
+    </div>
+
+    <div id="modal-windgrams" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Windgrams</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="windgrams"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toolbar-plots" class="leaflet-control leaflet-control-toolbar-panel">
+        <div class="leaflet-control-toolbar-panel-body p-2">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <label class="input-group-text">Region</label>
+                </div>
+                <select class="custom-select" id="region"></select>
+            </div>
+
+            <div class="input-group mt-2">
+                <div class="input-group-prepend">
+                    <label class="input-group-text">Grid</label>
+                </div>
+                <select class="custom-select" id="grid"></select>
+            </div>
+
+            <div class="input-group mt-2">
+                <div class="input-group-prepend">
+                    <label class="input-group-text">Variable</label>
+                </div>
+                <select class="custom-select" id="variable"></select>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="button-variable-info"><i class="fas fa-info-circle"></i></button>
+                </div>
+            </div>
+
+            <div class="card collapse mt-2" id="variable-info">
+                <div class="card-header">
+                    <i class="fas fa-info-circle mr-1"></i><span></span>
+                </div>
+                <div class="card-body">
+                </div>
+            </div>
+
+            <div class="mt-2">
+                <label for="plot-opacity">Opacity</label>
+                <input type="range" class="custom-range" id="plot-opacity" min="0" max="100">
+            </div>
+
+            <div class="mt-2">
+                <label for="plot-cycle-interval">Interval</label>
+                <input type="range" class="custom-range" id="plot-cycle-interval" min="1" max="5">
+            </div>
+
+            <div class="custom-control custom-checkbox mt-2">
+                <input type="checkbox" class="custom-control-input" id="show-grids">
+                <label class="custom-control-label" for="show-grids">Show Grid</label>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="toolbar-settings" class="leaflet-control leaflet-control-toolbar-panel">
+        <div class="leaflet-control-toolbar-panel-body p-2">
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="settings-scale">
+                <label class="custom-control-label" for="settings-scale">Show Scale</label>
+            </div>
+            <div class="custom-control custom-checkbox mt-2">
+                <input type="checkbox" class="custom-control-input" id="settings-coordinates">
+                <label class="custom-control-label" for="settings-coordinates">Show Coordinates</label>
+            </div>
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="lib/noaajs/noaa.js"></script>
+    <script src="lib/d3/d3.js"></script>
+    <script src="lib/moment/moment.min.js"></script>
+    <script src="lib/spin.js/spin.min.js"></script>
+    <script src="lib/suncalc/suncalc.js"></script>
+    <script src="lib/leaflet/leaflet.js"></script>
+    <script src="lib/leaflet-spin/leaflet.spin.min.js"></script>
+    <script src="lib/leaflet-search/leaflet-search.src.js"></script>
+    <script src="lib/sly/sly.min.js"></script>
+    <script src="lib/leaflet-color-markers/js/leaflet-color-markers.js"></script>
+    <script src="lib/proj4/proj4.js"></script>
+
+    <script src="js/openair.js"></script>
+    <script src="js/util.local-storage.js"></script>
+    <script src="js/units.js"></script>
+    <script src="js/rasp.variable.js"></script>
+    <script src="js/rasp.variables.js"></script>
+
+    <script src="js/leaflet.alert.js"></script>
+    <script src="js/leaflet.title.js"></script>
+    <script src="js/leaflet.map.ordered-controls.js"></script>
+    <script src="js/leaflet.providers.js"></script>
+    <script src="js/leaflet.layer.openair.js"></script>
+    <script src="js/leaflet.control.persistent-layers.js"></script>
+    <script src="js/leaflet.control.responsive-coordinates.js"></script>
+    <script src="js/leaflet.control.time-slider.js"></script>
+    <script src="js/leaflet.control.toolbar.js"></script>
+    <script src="js/leaflet.control.plot-legend.js"></script>
+
+    <script src="js/wxtofly.utils.js"></script>
+    <script src="js/wxtofly.run-jobs.js"></script>
+    <script src="js/wxtofly.sites-geojson.js"></script>
+    <script src="js/wxtofly.control.spinner.js"></script>
+    <script src="js/wxtofly.control.windgrams-menu.js"></script>
+    <script src="js/wxtofly.control.windgrams.js"></script>
+    <script src="js/wxtofly.control.blipspot.js"></script>
+    <script src="js/wxtofly.control.navbar.js"></script>
+    <script src="js/wxtofly.dialog.disclaimer.js"></script>
+    <script src="js/wxtofly.dialog.settings.js"></script>
+    <script src="js/wxtofly.toolbar.plots.js"></script>
+    <script src="js/wxtofly.toolbar.sites.js"></script>
+    <script src="js/wxtofly.toolbar.radar.js"></script>
+    <script src="js/wxtofly.toolbar.settings.js"></script>
+    <script src="js/wxtofly.map.js"></script>
+    <script src="js/wxtofly.page.map.js"></script>
+</body>
+</html>

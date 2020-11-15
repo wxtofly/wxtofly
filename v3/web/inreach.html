@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Inreach Setup</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/font-awesome/css/all.min.css" rel="stylesheet">
+    <link href="css/wxtofly.css" rel="stylesheet">
+
+    <!-- site icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="css/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="css/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="css/img/favicon-16x16.png">
+    <link rel="mask-icon" href="css/img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body class="page-inreach">
+
+    <div class="container">
+        <form class="needs-validation">
+            <div class="form-group mb-1">
+                <label for="pilot-number" class="mb-0">Pilot Number</label>
+                <input type="number" class="form-control" id="pilot-number" placeholder="Enter Pilot Number" required>
+                <div class="invalid-feedback">
+                    Pilot number is required!
+                </div>
+                <a href="https://canadiannationalspg.weebly.com/pilot-list.html" target="_blank"><small id="emailHelp" class="form-text text-muted">Pilot List</small></a>
+            </div>
+            <div class="form-group mb-1">
+                <label for="pilot-name" class="mb-0">Pilot Name</label>
+                <input type="text" class="form-control" id="pilot-name" placeholder="Enter Full Name" required>
+                <div class="invalid-feedback">
+                    Name is required!
+                </div>
+            </div>
+            <div class="form-group mb-1">
+                <label for="pilot-phone" class="mb-0">Pilot Phone Number</label>
+                <input type="text" class="form-control" id="pilot-phone" placeholder="Enter Phone Number" required>
+                <div class="invalid-feedback">
+                    Invalid phone number!
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <hr />
+
+    <div class="container">
+        <div class="form-group mb-1">
+            <label for="message-1" class="mb-0">Message #1</label>
+            <input type="text" class="form-control mb-1" id="message-1" readonly>
+            <input type="text" class="form-control" id="message-1-contact" readonly>
+        </div>
+        <div class="form-group mb-1">
+            <label for="message-2" class="mb-0">Message #2</label>
+            <input type="text" class="form-control mb-1" id="message-2" readonly>
+            <input type="text" class="form-control" id="message-2-contact" readonly>
+        </div>
+        <div class="form-group mb-1">
+            <label for="message-3" class="mb-0">Message #3</label>
+            <input type="text" class="form-control mb-1" id="message-3" readonly>
+            <input type="text" class="form-control" id="message-3-contact" readonly>
+        </div>
+        <div class="form-group mb-1">
+            <label for="emergency" class="mb-0">SOS-EMERGENCY</label>
+            <textarea type="text" class="form-control mb-1" id="emergency" rows="5" readonly></textarea>
+        </div>
+    </div>
+
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="lib/input-mask/jquery.inputmask.min.js"></script>
+
+    <script src="js/util.local-storage.js"></script>
+    <script src="js/wxtofly.utils.js"></script>
+    <script>
+        $('#pilot-phone').inputmask('+9[9] 999-999-9999')
+
+        $('button').click(e => {
+            let form = $('form');
+            let validPhone = $('#pilot-phone').inputmask('isComplete');
+
+            if (!validPhone) {
+                $('#pilot-phone')[0].setCustomValidity('invalid');
+            }
+            else {
+                $('#pilot-phone')[0].setCustomValidity('');
+            }
+
+            if (form[0].checkValidity() === true && validPhone) {
+                let name = $('#pilot-name').val();
+                let number = parseInt($('#pilot-number').val());
+                let phone = $('#pilot-phone').val();
+
+                $('#message-1').val(`#${number} LOK ${name}, Ph ${phone}, LANDED OK`)
+                $('#message-1-contact').val(`+17789222556, PembyRetrieve@gmail.com, ${phone.replace(/[ -]/g, '')}`);
+                $('#message-2').val(`#${number} AID ${name}, Ph ${phone}, LANDED BUT NEEDS HELP`)
+                $('#message-2-contact').val(`+17789222556, PembyRetrieve@gmail.com, +17788927733, +16046985434, ${phone.replace(/[ -]/g, '')}`);
+                $('#message-3').val(`#${number} PUP ${name}, Ph ${phone}, PICKED UP`)
+                $('#message-3-contact').val(`+17789222556, PembyRetrieve@gmail.com, ${phone.replace(/[ -]/g, '')}`);
+                $('#emergency').val(`#${number} Pete Pilot, Ph ${phone}, is a participant in a paragliding competition in Pemberton, British Columbia. The Safety Director can be contacted at 604-698-5434. The Meet Director can be contacted at 778-892-7733.`)
+            }
+            form.addClass('was-validated');
+        });
+    </script>
+</body>
+</html>

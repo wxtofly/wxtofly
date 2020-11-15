@@ -1,0 +1,3 @@
+C:\Code\GitHub\wxtofly\v2\WxToFly\obj\Debug\WxToFly.njsprojAssemblyReference.cache
+C:\Code\GitHub\wxtofly\v2\WxToFly\obj\Debug\WxToFly.njsproj.CoreCompileInputs.cache
+C:\Code\GitHub\wxtofly\v2\WxToFly\bin\Microsoft.NodejsTools.WebRole.dll

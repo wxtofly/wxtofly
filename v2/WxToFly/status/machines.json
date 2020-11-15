@@ -1,0 +1,14 @@
+[
+ {
+  "hostname":"wxtofly1",
+  "operator":"jiri",
+  "registered":"3/2/2018",
+  "description":"Ubuntu Server 16.04 LTS"
+ },
+ {
+  "hostname":"wxtofly2",
+  "operator":"jiri",
+  "registered":"3/2/2018",
+  "description":"Ubuntu Server 16.04 LTS"
+ }
+]

@@ -1,0 +1,118 @@
+
+[
+ {
+  "time":"2020/05/03 12:30:01",
+  "type":"OK",
+  "message":"Starting run for 18z"
+ },
+ {
+  "time":"2020/05/03 12:30:02",
+  "type":"OK",
+  "message":"[RUN] Starting job 18z-PNW+2"
+ },
+ {
+  "time":"2020/05/03 12:30:03",
+  "type":"OK",
+  "message":"[RASP-PNW+2]: Starting RASP run"
+ },
+ {
+  "time":"2020/05/03 13:56:22",
+  "type":"OK",
+  "message":"[RASP-PNW+2]: Finished run in 01:26:19"
+ },
+ {
+  "time":"2020/05/03 13:56:22",
+  "type":"OK",
+  "message":"[RUN] Starting job 18z-PNW+3"
+ },
+ {
+  "time":"2020/05/03 13:56:22",
+  "type":"OK",
+  "message":"[RASP-PNW+3]: Starting RASP run"
+ },
+ {
+  "time":"2020/05/03 13:56:22",
+  "type":"OK",
+  "message":"[PNW+2.d2] Started d2 tasks"
+ },
+ {
+  "time":"2020/05/03 13:56:25",
+  "type":"OK",
+  "message":"[PNW+2.d2] Started generating BLIPSPOTS"
+ },
+ {
+  "time":"2020/05/03 13:57:38",
+  "type":"ERROR",
+  "message":"[PNW+2.d2] Error generating BLIPSPOTS"
+ },
+ {
+  "time":"2020/05/03 13:57:38",
+  "type":"OK",
+  "message":"[PNW+2.d2] Started generating WINDGRAMS"
+ },
+ {
+  "time":"2020/05/03 13:59:38",
+  "type":"OK",
+  "message":"[RASP-PNW+3]: Finished run in 00:03:16"
+ },
+ {
+  "time":"2020/05/03 13:59:38",
+  "type":"OK",
+  "message":"[RUN] Starting job 18z-PNWRAT+1"
+ },
+ {
+  "time":"2020/05/03 13:59:39",
+  "type":"OK",
+  "message":"[RASP-PNWRAT+1]: Starting RASP run"
+ },
+ {
+  "time":"2020/05/03 13:59:38",
+  "type":"OK",
+  "message":"[PNW+3.d2] Started d2 tasks"
+ },
+ {
+  "time":"2020/05/03 13:59:44",
+  "type":"OK",
+  "message":"[PNW+3.d2] Started generating BLIPSPOTS"
+ },
+ {
+  "time":"2020/05/03 13:59:46",
+  "type":"ERROR",
+  "message":"[PNW+3.d2] Error generating BLIPSPOTS"
+ },
+ {
+  "time":"2020/05/03 13:59:46",
+  "type":"OK",
+  "message":"[PNW+3.d2] Started generating WINDGRAMS"
+ },
+ {
+  "time":"2020/05/03 13:59:48",
+  "type":"ERROR",
+  "message":"[PNW+3.d2] Error generating WINDGRAMS"
+ },
+ {
+  "time":"2020/05/03 13:59:48",
+  "type":"OK",
+  "message":"[PNW+3.d2] All tasks finished in 00:00:10"
+ },
+ {
+  "time":"2020/05/03 13:59:59",
+  "type":"OK",
+  "message":"[PNW+2.d2] Finished generating WINDGRAMS"
+ },
+ {
+  "time":"2020/05/03 13:59:59",
+  "type":"OK",
+  "message":"[PNW+2.d2] All tasks finished in 00:03:37"
+ },
+ {
+  "time":"2020/05/03 14:00:41",
+  "type":"OK",
+  "message":"[BLIPSPOT] Uploaded 127 files (318KiB) in 00:04:13"
+ },
+ {
+  "time":"2020/05/03 14:03:31",
+  "type":"OK",
+  "message":"[WINDGRAMS] Uploaded 127 files (12MiB) in 00:04:24"
+ }
+]

@@ -1,0 +1,42 @@
+body.page-noaa {
+    width: 100%;
+    height: 100vh;
+
+    div#map {
+        height: 100%;
+        width: 100%
+    }
+
+    .leaflet-control-layers {
+        font-size: 14px;
+    }
+
+    a.toolbar-button-noaa {
+        background-image: url(icons/NOAA_logo.svg);
+        background-position: center;
+        background-size: contain;
+        background-origin: content-box;
+        padding: 1px;
+    }
+
+
+
+    div#noaa-grid-point-plot {
+        width: 500px;
+    }
+
+    @media screen and (max-width: 700px) {
+        ul .search-tooltip {
+            width: 350px;
+        }
+
+        ul.search-tooltip li {
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .leaflet-control-attribution {
+            display: none;
+        }
+    }
+}

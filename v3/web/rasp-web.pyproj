@@ -1,0 +1,312 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>3bfd44e2-bbac-42be-89ef-70ff468bd1d3</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{1b580a1a-fdb3-4b32-83e1-6407eb2722e6};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>
+    </StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Web launcher</LaunchProvider>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+    <Name>rasp-web</Name>
+    <RootNamespace>rasp-web</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="css\" />
+    <Folder Include="css\icons\" />
+    <Folder Include="img\" />
+    <Folder Include="json\" />
+    <Folder Include="js\" />
+    <Folder Include="js\noaa\" />
+    <Folder Include="lib\" />
+    <Folder Include="lib\bootstrap\" />
+    <Folder Include="lib\font-awesome\" />
+    <Folder Include="lib\font-awesome\css\" />
+    <Folder Include="lib\font-awesome\webfonts\" />
+    <Folder Include="lib\jquery-csv\" />
+    <Folder Include="lib\jquery-touchswipe\" />
+    <Folder Include="lib\jquery\" />
+    <Folder Include="lib\leaflet-color-markers\" />
+    <Folder Include="lib\leaflet-color-markers\img\" />
+    <Folder Include="lib\leaflet-color-markers\js\" />
+    <Folder Include="lib\leaflet\" />
+    <Folder Include="lib\leaflet\images\" />
+    <Folder Include="lib\moment\" />
+    <Folder Include="lib\popper\" />
+    <Folder Include="lib\proj4\" />
+    <Folder Include="lib\sidebar-v2\" />
+    <Folder Include="lib\sly\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="compilerconfig.json" />
+    <Content Include="compilerconfig.json.defaults">
+      <SubType>Content</SubType>
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </Content>
+    <Content Include="css\icons\MapCenterCoordIcon1.svg" />
+    <Content Include="css\icons\MapCenterCoordIcon2.svg" />
+    <Content Include="css\leaflet.title.css">
+      <SubType>Content</SubType>
+      <DependentUpon>css\leaflet.title.less</DependentUpon>
+    </Content>
+    <Content Include="css\leaflet.title.less" />
+    <Content Include="css\leaflet.alert.css">
+      <SubType>Content</SubType>
+      <DependentUpon>css\leaflet.alert.less</DependentUpon>
+    </Content>
+    <Content Include="css\leaflet.alert.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>css\leaflet.alert.css</DependentUpon>
+    </Content>
+    <Content Include="css\leaflet.control.coordinates.css" />
+    <Content Include="css\leaflet.control.coordinates.min.css" />
+    <Content Include="css\leaflet.alert.less" />
+    <Content Include="css\leaflet.control.plot-legend.css" />
+    <Content Include="css\leaflet.control.plot-legend.less" />
+    <Content Include="css\leaflet.control.plot-legend.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>css\leaflet.control.plot-legend.css</DependentUpon>
+    </Content>
+    <Content Include="css\leaflet.control.responsive-coordinates.css">
+      <SubType>Content</SubType>
+      <DependentUpon>css\leaflet.control.responsive-coordinates.less</DependentUpon>
+    </Content>
+    <Content Include="css\leaflet.control.responsive-coordinates.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>css\leaflet.control.responsive-coordinates.css</DependentUpon>
+    </Content>
+    <Content Include="css\leaflet.title.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>css\leaflet.title.css</DependentUpon>
+    </Content>
+    <Content Include="css\wxtofly.control.job-logs.css" />
+    <Content Include="css\wxtofly.control.job-logs.less" />
+    <Content Include="css\wxtofly.control.job-logs.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>css\wxtofly.control.job-logs.css</DependentUpon>
+    </Content>
+    <Content Include="css\wxtofly.control.machine-jobs.css" />
+    <Content Include="css\wxtofly.control.machine-jobs.less" />
+    <Content Include="css\wxtofly.control.machine-jobs.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>css\wxtofly.control.machine-jobs.css</DependentUpon>
+    </Content>
+    <Content Include="css\wxtofly.control.spinner.css">
+      <SubType>Content</SubType>
+      <DependentUpon>css\wxtofly.control.spinner.less</DependentUpon>
+    </Content>
+    <Content Include="css\wxtofly.control.spinner.less" />
+    <Content Include="css\wxtofly.control.log.css" />
+    <Content Include="css\wxtofly.control.log.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>css\wxtofly.control.log.css</DependentUpon>
+    </Content>
+    <Content Include="css\wxtofly.control.machine-status.css" />
+    <Content Include="css\wxtofly.control.machine-status.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>css\wxtofly.control.machine-status.css</DependentUpon>
+    </Content>
+    <Content Include="css\wxtofly.control.spinner.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>css\wxtofly.control.spinner.css</DependentUpon>
+    </Content>
+    <Content Include="css\wxtofly.page.logs.css" />
+    <Content Include="css\wxtofly.page.logs.less" />
+    <Content Include="css\wxtofly.control.log.less" />
+    <Content Include="css\wxtofly.control.machine-status.less" />
+    <Content Include="css\wxtofly.page.jobs.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>css\wxtofly.page.logs.css</DependentUpon>
+    </Content>
+    <Content Include="css\wxtofly.page.machines.css" />
+    <Content Include="css\wxtofly.page.machines.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>css\wxtofly.page.machines.css</DependentUpon>
+    </Content>
+    <Content Include="css\wxtofly.page.machines.less" />
+    <Content Include="css\leaflet.control.toolbar.css">
+      <SubType>Content</SubType>
+      <DependentUpon>css\leaflet.control.toolbar.less</DependentUpon>
+    </Content>
+    <Content Include="css\leaflet.control.toolbar.less" />
+    <Content Include="css\leaflet.control.time-slider.css" />
+    <Content Include="css\leaflet.control.time-slider.less" />
+    <Content Include="css\leaflet.control.coordinates.css" />
+    <Content Include="css\leaflet.control.responsive-coordinates.less" />
+    <Content Include="css\leaflet.control.coordinates.min.css" />
+    <Content Include="css\leaflet.control.time-slider.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>css\leaflet.control.time-slider.css</DependentUpon>
+    </Content>
+    <Content Include="css\leaflet.control.toolbar.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>css\leaflet.control.toolbar.css</DependentUpon>
+    </Content>
+    <Content Include="css\wxtofly.control.navbar.css" />
+    <Content Include="css\wxtofly.control.windgrams.css" />
+    <Content Include="css\wxtofly.page.map.css" />
+    <Content Include="css\wxtofly.page.index.css" />
+    <Content Include="css\wxtofly.page.windgrams.css" />
+    <Content Include="css\wxtofly.control.windgrams-menu.css" />
+    <Content Include="img\icon.png" />
+    <Content Include="js\wxtofly.control.machine-jobs.js" />
+    <Content Include="js\wxtofly.control..js" />
+    <Content Include="logs.html" />
+    <Content Include="js\leaflet.title.js" />
+    <Content Include="js\leaflet.alert.js" />
+    <Content Include="js\leaflet.control.plot-legend.js" />
+    <Content Include="js\leaflet.layer.waypoints.js" />
+    <Content Include="js\leaflet.layer.openair.js" />
+    <Content Include="js\leaflet.control.toolbar.js" />
+    <Content Include="js\leaflet.control.time-slider.js" />
+    <Content Include="js\leaflet.map.ordered-controls.js" />
+    <Content Include="js\openair.js" />
+    <Content Include="js\rasp.variables.js" />
+    <Content Include="js\util.local-storage.js" />
+    <Content Include="js\wxtofly.control.spinner.js" />
+    <Content Include="js\wxtofly.control.log.js" />
+    <Content Include="js\wxtofly.control.job-logs.js" />
+    <Content Include="js\wxtofly.control.machine-status.js" />
+    <Content Include="js\wxtofly.page.logs.js" />
+    <Content Include="js\wxtofly.toolbar.radar.js" />
+    <Content Include="js\wxtofly.toolbar.settings.js" />
+    <Content Include="js\wxtofly.toolbar.sites.js" />
+    <Content Include="js\wxtofly.utils.js" />
+    <Content Include="js\wxtofly.toolbar.plots.js" />
+    <Content Include="lib\bootstrap\bootstrap.min.js" />
+    <Content Include="lib\jquery-csv\jquery.csv.js" />
+    <Content Include="lib\jquery-csv\jquery.csv.min.js" />
+    <Content Include="lib\leaflet-color-markers\img\marker-icon-2x-black.png" />
+    <Content Include="lib\leaflet-color-markers\img\marker-icon-2x-blue.png" />
+    <Content Include="lib\leaflet-color-markers\img\marker-icon-2x-green.png" />
+    <Content Include="lib\leaflet-color-markers\img\marker-icon-2x-grey.png" />
+    <Content Include="lib\leaflet-color-markers\img\marker-icon-2x-orange.png" />
+    <Content Include="lib\leaflet-color-markers\img\marker-icon-2x-red.png" />
+    <Content Include="lib\leaflet-color-markers\img\marker-icon-2x-violet.png" />
+    <Content Include="lib\leaflet-color-markers\img\marker-icon-2x-yellow.png" />
+    <Content Include="lib\leaflet-color-markers\img\marker-icon-black.png" />
+    <Content Include="lib\leaflet-color-markers\img\marker-icon-blue.png" />
+    <Content Include="lib\leaflet-color-markers\img\marker-icon-green.png" />
+    <Content Include="lib\leaflet-color-markers\img\marker-icon-grey.png" />
+    <Content Include="lib\leaflet-color-markers\img\marker-icon-orange.png" />
+    <Content Include="lib\leaflet-color-markers\img\marker-icon-red.png" />
+    <Content Include="lib\leaflet-color-markers\img\marker-icon-violet.png" />
+    <Content Include="lib\leaflet-color-markers\img\marker-icon-yellow.png" />
+    <Content Include="lib\leaflet-color-markers\img\marker-shadow.png" />
+    <Content Include="lib\leaflet-color-markers\js\leaflet-color-markers.js" />
+    <Content Include="lib\moment\moment.min.js" />
+    <Content Include="lib\popper\popper.js" />
+    <Content Include="lib\popper\popper.min.js" />
+    <Content Include="navbar.html" />
+    <Content Include="explorer.html" />
+    <Content Include="img\eagle.png" />
+    <Content Include="disclaimer.html" />
+    <Content Include="js\leaflet.control.responsive-coordinates.js" />
+    <Content Include="js\leaflet.control.persistent-layers.js" />
+    <Content Include="js\leaflet.providers.js" />
+    <Content Include="js\util.namelist.js" />
+    <Content Include="js\wxtofly.control.navbar.js" />
+    <Content Include="js\wxtofly.control.disclaimer.js" />
+    <Content Include="js\wxtofly.control.windgrams.js" />
+    <Content Include="js\wxtofly.page.map.js" />
+    <Content Include="js\wxtofly.sites-geojson.js" />
+    <Content Include="js\wxtofly.run-jobs.js" />
+    <Content Include="js\wxtofly.page.windgrams.js" />
+    <Content Include="js\wxtofly.control.windgrams-menu.js" />
+    <Content Include="js\wxtofly.map.js" />
+    <Content Include="lib\bootstrap\bootstrap.bundle.min.js" />
+    <Content Include="lib\bootstrap\bootstrap.min.css" />
+    <Content Include="lib\font-awesome\css\all.min.css" />
+    <Content Include="lib\font-awesome\webfonts\fa-brands-400.eot" />
+    <Content Include="lib\font-awesome\webfonts\fa-brands-400.svg" />
+    <Content Include="lib\font-awesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="lib\font-awesome\webfonts\fa-brands-400.woff" />
+    <Content Include="lib\font-awesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="lib\font-awesome\webfonts\fa-regular-400.eot" />
+    <Content Include="lib\font-awesome\webfonts\fa-regular-400.svg" />
+    <Content Include="lib\font-awesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="lib\font-awesome\webfonts\fa-regular-400.woff" />
+    <Content Include="lib\font-awesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="lib\font-awesome\webfonts\fa-solid-900.eot" />
+    <Content Include="lib\font-awesome\webfonts\fa-solid-900.svg" />
+    <Content Include="lib\font-awesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="lib\font-awesome\webfonts\fa-solid-900.woff" />
+    <Content Include="lib\font-awesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="lib\jquery-touchswipe\jquery.touchSwipe.js" />
+    <Content Include="lib\jquery-touchswipe\jquery.touchSwipe.min.js" />
+    <Content Include="lib\jquery\jquery.min.js" />
+    <Content Include="lib\leaflet\images\layers-2x.png" />
+    <Content Include="lib\leaflet\images\layers.png" />
+    <Content Include="lib\leaflet\images\marker-icon-2x.png" />
+    <Content Include="lib\leaflet\images\marker-icon.png" />
+    <Content Include="lib\leaflet\images\marker-shadow.png" />
+    <Content Include="lib\leaflet\leaflet.css" />
+    <Content Include="lib\leaflet\leaflet.js" />
+    <Content Include="lib\proj4\proj4.js" />
+    <Content Include="lib\sidebar-v2\leaflet-sidebar.min.css" />
+    <Content Include="lib\sidebar-v2\leaflet-sidebar.min.js" />
+    <Content Include="lib\sly\sly.js" />
+    <Content Include="lib\sly\sly.min.js" />
+    <Content Include="map.html" />
+    <Content Include="index.html" />
+    <Content Include="jobs.html" />
+    <Content Include="compare.html" />
+    <Content Include="windgrams.html" />
+    <Content Include="machines.html" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

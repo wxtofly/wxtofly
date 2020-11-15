@@ -1,0 +1,44 @@
+.leaflet-alert-container {
+    .leaflet-alert-flex {
+        display: flex;
+        /* The alert message box */
+        .leaflet-alert {
+            padding: 15px;
+            color: white;
+            margin: 10px auto;
+            z-index: 1500;
+            opacity: 1;
+            transition: opacity 0.6s; /* 600ms to fade out */
+            font-size: 14px;
+            border-radius: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            background-clip: padding-box;
+        }
+
+        .leaflet-alert-error {
+            background-color: #f44336; /* Red */
+        }
+
+        .leaflet-alert-info {
+            background-color: #2196F3; /* Red */
+        }
+
+        .leaflet-alert-warning {
+            background-color: #ff9800; /* Red */
+        }
+        /* The close button */
+        .closebtn {
+            margin-left: 30px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 24px;
+            cursor: pointer;
+        }
+        /* When moving the mouse over the close button */
+        .closebtn:hover {
+            color: black;
+        }
+    }
+}

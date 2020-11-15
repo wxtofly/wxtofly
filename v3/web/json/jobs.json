@@ -1,0 +1,10 @@
+[
+  {
+    "machine": "wxtofly3",
+    "jobs": [ "WA4+0", "TIGER+0", "CHELAN+0", "OR4+0" ]
+  },
+  {
+    "machine": "wxtofly4",
+    "jobs": [ "WA4+1", "TIGER+1", "CHELAN+1", "OR4+1" ]
+  }
+]

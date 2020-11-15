@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en" style="overflow-x: hidden; margin-top: 30px;">
+<head>
+    <title>WxToFly - Windgrams</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/font-awesome/css/all.min.css" rel="stylesheet">
+    <link href="css/wxtofly.css" rel="stylesheet">
+
+    <!-- site icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="css/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="css/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="css/img/favicon-16x16.png">
+    <link rel="mask-icon" href="css/img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body class="page-windgrams">
+
+    <nav id="navbar"></nav>
+
+    <div class="container-windgrams">
+        <div class="container-offcanvas">
+            <div id="windgrams-menu"></div>
+            <div id="windgrams-body">
+                <div id="point-forecast"></div>
+                <div id="windgrams"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/jquery-touchswipe/jquery.touchSwipe.min.js"></script>
+    <script src="lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="lib/noaajs/noaa.js"></script>
+    <script src="lib/d3/d3.js"></script>
+    <script src="lib/moment/moment.min.js"></script>
+    <script src="lib/spin.js/spin.min.js"></script>
+    <script src="lib/suncalc/suncalc.js"></script>
+    <script src="lib/leaflet/leaflet.js"></script>
+    <script src="lib/leaflet-spin/leaflet.spin.min.js"></script>
+    <script src="lib/leaflet-search/leaflet-search.src.js"></script>
+
+    <script src="js/units.js"></script>
+    <script src="js/util.local-storage.js"></script>
+    <script src="js/rasp.variable.js"></script>
+    <script src="js/rasp.variables.js"></script>
+
+    <script src="js/noaa.variable.js"></script>
+    <script src="js/noaa.text-products.js"></script>
+    <script src="js/noaa.chart.js"></script>
+    <script src="js/noaa.chart.observations.js"></script>
+    <script src="js/noaa.chart.hourly.js"></script>
+    <script src="js/noaa.chart.hourly-base.js"></script>
+    <script src="js/noaa.chart.hourly-index.js"></script>
+    <script src="js/noaa.chart.hourly-length.js"></script>
+    <script src="js/noaa.chart.hourly-temperature.js"></script>
+    <script src="js/noaa.chart.hourly-tide.js"></script>
+    <script src="js/noaa.chart.hourly-pressure.js"></script>
+    <script src="js/noaa.chart.hourly-propability.js"></script>
+    <script src="js/noaa.chart.hourly-swell.js"></script>
+    <script src="js/noaa.chart.hourly-weather.js"></script>
+    <script src="js/noaa.chart.hourly-wave.js"></script>
+    <script src="js/noaa.chart.hourly-wind.js"></script>
+    <script src="js/noaa.control.js"></script>
+    <script src="js/noaa.control.error.js"></script>
+    <script src="js/noaa.control.chart.js"></script>
+    <script src="js/noaa.control.station-chart.js"></script>
+    <script src="js/noaa.control.hourly-chart.js"></script>
+    <script src="js/noaa.control.forecast.js"></script>
+    <script src="js/noaa.control.forecast-period.js"></script>
+    <script src="js/noaa.control.forecast-discussion.js"></script>
+
+    <script src="js/leaflet.control.persistent-layers.js"></script>
+    <script src="js/leaflet.providers.js"></script>
+    <script src="js/leaflet.map.ordered-controls.js"></script>
+
+    <script src="js/wxtofly.utils.js"></script>
+    <script src="js/wxtofly.run-jobs.js"></script>
+    <script src="js/wxtofly.sites-geojson.js"></script>
+    <script src="js/wxtofly.control.spinner.js"></script>
+    <script src="js/wxtofly.control.windgrams-menu.js"></script>
+    <script src="js/wxtofly.control.windgrams.js"></script>
+    <script src="js/wxtofly.control.blipspot.js"></script>
+    <script src="js/wxtofly.control.navbar.js"></script>
+    <script src="js/wxtofly.control.point-forecast.js"></script>
+    <script src="js/wxtofly.control.collapse-button.js"></script>
+    <script src="js/wxtofly.dialog.disclaimer.js"></script>
+    <script src="js/wxtofly.dialog.settings.js"></script>
+    <script src="js/wxtofly.map.js"></script>
+    <script src="js/wxtofly.page.windgrams.js"></script>
+    <script>
+        PageWindgrams();
+    </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+body.page-map {
+    width: 100%;
+    height: 100%;
+
+    div#map {
+        height: 100%;
+        width: 100%
+    }
+
+    .leaflet-control-layers {
+        font-size: 14px;
+    }
+
+    #toolbar-plots {
+        width: 500px;
+    }
+
+    #toolbar-plots .input-group .input-group-text {
+        width: 80px;
+    }
+
+    #toolbar-menu {
+        overflow: visible;
+    }
+
+    .popup-site div#current-windgram {
+        width: 600px;
+    }
+
+    div.modal#modal-windgrams .modal-header {
+        background-color: #e9ecef;
+        padding: 10px;
+    }
+
+    div.modal#modal-windgrams .modal-footer {
+        padding: 10px;
+    }
+
+    div.modal#modal-windgrams .modal-body {
+        padding: 10px;
+    }
+
+    div.leaflet-top.leaflet-right {
+        z-index: 1001;
+    }
+
+    @media screen and (max-width: 700px) {
+        .popup-site div#current-windgram {
+            width: 400px;
+        }
+
+        div.leaflet-top.leaflet-left .leaflet-control {
+            margin-left: 0px;
+        }
+
+        div.leaflet-top.leaflet-left .leaflet-control:first-child {
+            margin-top: 0px;
+        }
+
+        div.leaflet-top.leaflet-right .leaflet-control {
+            margin-right: 0px;
+        }
+
+        div.leaflet-top.leaflet-right .leaflet-control:first-child {
+            margin-top: 0px;
+        }
+
+        div.leaflet-bottom.leaflet-left .leaflet-control {
+            margin-left: 0px;
+        }
+
+        div.leaflet-bottom.leaflet-left .leaflet-control:last-child {
+            margin-bottom: 0px;
+        }
+
+        div.leaflet-bottom.leaflet-right .leaflet-control {
+            margin-right: 0px;
+        }
+
+        div.leaflet-bottom.leaflet-right .leaflet-control:last-child {
+            margin-bottom: 0px;
+        }
+
+        .leaflet-control-attribution {
+            display: none;
+        }
+
+        #toolbar-plots {
+            width: 500px;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        #toolbar-plots {
+            width: 400px;
+        }
+
+        .popup-site div#current-windgram {
+            width: 400px;
+        }
+
+        div.modal#modal-windgrams .modal-dialog {
+            margin: 0;
+        }
+
+        div.modal#modal-windgrams .modal-content {
+            border: none;
+            border-radius: initial;
+        }
+
+        div.modal#modal-windgrams .modal-header {
+            border-radius: initial;
+        }
+
+        div.modal#modal-windgrams .modal-body {
+            padding: 0;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        #toolbar-plots {
+            width: 300px;
+        }
+
+        .popup-site div#current-windgram {
+            width: 250px;
+        }
+
+        div#variable-info .card-header i {
+            display: initial;
+        }
+    }
+
+    div#variable-info .card-header {
+        padding: 5px;
+        font-size: 14px;
+        background-color: #e9ecef;
+    }
+
+    div#variable-info .card-header i {
+        //display: none;
+    }
+
+    div#variable-info .card-body {
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    div.sm-screen-modal {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+    }
+}

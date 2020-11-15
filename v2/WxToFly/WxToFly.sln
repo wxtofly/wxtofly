@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30711.63
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "WxToFly", "WxToFly.njsproj", "{667DD452-82F1-4440-BFCB-0120786581DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{667DD452-82F1-4440-BFCB-0120786581DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{667DD452-82F1-4440-BFCB-0120786581DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{667DD452-82F1-4440-BFCB-0120786581DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{667DD452-82F1-4440-BFCB-0120786581DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A93D4BB-9849-4699-9FAE-4308E15B2719}
+	EndGlobalSection
+EndGlobal

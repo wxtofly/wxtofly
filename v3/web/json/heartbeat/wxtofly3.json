@@ -1,0 +1,1 @@
+{"timestamp": 1558888501.4927745, "disk": {"usage": 65, "total": 133685121024, "available": 44882538496, "used": 12626323}, "memory": {"total": 8340017152, "usage": 10}, "cpu": {"model": "Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz", "count": 4}, "os": {"system": "Linux", "distname": "Ubuntu", "version": "18.04", "id": "bionic"}}

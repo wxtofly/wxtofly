@@ -1,0 +1,51 @@
+body.page-index {
+    height: 100vh;
+
+    &::after {
+        background-image: url(img/eagle.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        content: "";
+        opacity: 0.3;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
+    }
+
+    div.home-links {
+        display:flex;
+        height: calc(100% - 60px)
+    }
+
+    div.home-links > div{
+        margin: auto auto;
+        display:flex;
+        flex-direction: column;
+    }
+
+    div.home-links > div > div{
+        margin: 10px auto;
+        display: flex;
+        text-align:center;
+    }
+
+    div.home-links > div > div a {
+        text-decoration: none;
+        color: black;
+        padding: 10px;
+        border: 1px solid #7d7d7d;
+        border-radius: 5px;
+        width: 200px;
+        background-color: rgba(248,249,250,0.63);
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    body.page-index::after {
+        background-size: contain;
+    }
+}

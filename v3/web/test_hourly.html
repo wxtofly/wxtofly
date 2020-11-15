@@ -1,0 +1,260 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WxToFly - Windgrams</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/font-awesome/css/all.min.css" rel="stylesheet">
+    <link href="lib/leaflet/leaflet.css" rel="stylesheet">
+    <link href="lib/leaflet-search/leaflet-search.min.css" rel="stylesheet">
+    <link href="css/wxtofly.css" rel="stylesheet">
+
+    <!-- site icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="css/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="css/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="css/img/favicon-16x16.png">
+    <link rel="mask-icon" href="css/img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body class="page-test-hourly">
+
+    <div id="map"></div>
+
+    <div id="point-forecast"></div>
+
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="lib/noaajs/noaa.js"></script>
+    <script src="lib/d3/d3.js"></script>
+    <script src="lib/moment/moment.min.js"></script>
+    <script src="lib/spin.js/spin.min.js"></script>
+    <script src="lib/suncalc/suncalc.js"></script>
+    <script src="lib/leaflet/leaflet.js"></script>
+    <script src="lib/leaflet-spin/leaflet.spin.min.js"></script>
+    <script src="lib/leaflet-search/leaflet-search.src.js"></script>
+
+    <script src="js/units.js"></script>
+    <script src="js/util.local-storage.js"></script>
+
+    <script src="js/noaa.variable.js"></script>
+    <script src="js/noaa.text-products.js"></script>
+    <script src="js/noaa.chart.js"></script>
+    <script src="js/noaa.chart.observations.js"></script>
+    <script src="js/noaa.chart.hourly.js"></script>
+    <script src="js/noaa.chart.hourly-base.js"></script>
+    <script src="js/noaa.chart.hourly-index.js"></script>
+    <script src="js/noaa.chart.hourly-length.js"></script>
+    <script src="js/noaa.chart.hourly-temperature.js"></script>
+    <script src="js/noaa.chart.hourly-tide.js"></script>
+    <script src="js/noaa.chart.hourly-pressure.js"></script>
+    <script src="js/noaa.chart.hourly-propability.js"></script>
+    <script src="js/noaa.chart.hourly-swell.js"></script>
+    <script src="js/noaa.chart.hourly-weather.js"></script>
+    <script src="js/noaa.chart.hourly-wave.js"></script>
+    <script src="js/noaa.chart.hourly-wind.js"></script>
+    <script src="js/noaa.control.error.js"></script>
+    <script src="js/noaa.control.station-chart.js"></script>
+    <script src="js/noaa.control.hourly-chart.js"></script>
+    <script src="js/noaa.control.forecast.js"></script>
+    <script src="js/noaa.control.forecast-period.js"></script>
+    <script src="js/noaa.control.forecast-discussion.js"></script>
+
+    <script src="js/leaflet.control.persistent-layers.js"></script>
+    <script src="js/leaflet.providers.js"></script>
+    <script src="js/leaflet.map.ordered-controls.js"></script>
+
+    <script src="js/wxtofly.utils.js"></script>
+    <script src="js/wxtofly.run-jobs.js"></script>
+    <script src="js/wxtofly.sites-geojson.js"></script>
+    <script src="js/wxtofly.control.spinner.js"></script>
+    <script src="js/wxtofly.control.windgrams-menu.js"></script>
+    <script src="js/wxtofly.control.windgrams.js"></script>
+    <script src="js/wxtofly.control.blipspot.js"></script>
+    <script src="js/wxtofly.control.navbar.js"></script>
+    <script src="js/wxtofly.control.point-forecast.js"></script>
+    <script src="js/wxtofly.control.collapse-button.js"></script>
+    <script src="js/wxtofly.dialog.disclaimer.js"></script>
+    <script src="js/wxtofly.dialog.settings.js"></script>
+    <script src="js/wxtofly.map.js"></script>
+
+    <script>
+        var storage = new LocalStorageUtil('point');
+
+        let zoom = parseInt(storage.get('zoom')),
+            lat = parseFloat(storage.get('lat')),
+            lon = parseFloat(storage.get('lon'));
+
+        if (lat && lon) {
+            init([lat, lon], zoom, true);
+        }
+        else if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(position => {
+                init([position.coords.latitude, position.coords.longitude], 13);
+            });
+        } else {
+            init([38.892460778169166, -99.34942982214949], 5);
+        }
+
+        function init(center, zoom, load) {
+            let gridPointPolygon,
+                coopsStationMarker;
+
+            wxMap = $('#map').wxMap({
+                'center': center,
+                'zoom': zoom
+            });
+
+            wxMap.map.on('click', e => {
+                getPointForecast(e.latlng.lat, e.latlng.lng);
+            });
+
+            L.control.search({
+                url: 'https://nominatim.openstreetmap.org/search?country=usa&format=json&q={s}',
+                jsonpParam: 'json_callback',
+                propertyName: 'display_name',
+                propertyLoc: ['lat', 'lon'],
+                autoCollapse: true,
+                autoType: false,
+                autoResize: false,
+                minLength: 2,
+                marker: null,
+                moveToLocation: function (latlng, title, map) {
+                    getPointForecast(latlng.lat, latlng.lng);
+                },
+                buttonContent: '<i class="fas fa-search"></i>',
+                inputWidth: 250
+            }).addTo(wxMap.map);
+
+            function getPointForecast(lat, lon) {
+                storage.set('zoom', wxMap.map.getZoom());
+                storage.set('lat', lat);
+                storage.set('lon', lon);
+
+                $('#point-forecast').empty()
+                if (gridPointPolygon) {
+                    gridPointPolygon.remove();
+                }
+                if (coopsStationMarker) {
+                    coopsStationMarker.remove();
+                }
+
+                console.log('http://forecast.weather.gov/MapClick.php?lat=' + lat + '&lon=' + lon + '&unit=0&lg=english&FcstType=graphical');
+
+                $('#point-forecast').pointForecast(lat, lon, {
+                    'spinner': true,
+                    'forecast': {
+                        'show': true,
+                        'collapse': true
+                    },
+                    'discussion': {
+                        'show': true,
+                        'collapse': true,
+                        'maxHeight': 300
+                    },
+                    'hourlyChart': {
+                        'show': true,
+                        'collapse': false,
+                        'width': $(window).width() - 1,
+                        'height': $(window).height() - $('#map').height() - 200,
+                        'charts': {
+                            'temperature': {
+                            },
+                            'sky': {
+                            },
+                            'probabilityOfThunder': {
+                            },
+                            'surfaceWind': {
+                            },
+                            'transportWind': {
+                            },
+                            'twentyFootWind': {
+                            },
+                            'weather': {
+                            },
+                            'precipitationRain': {
+                            },
+                            'precipitationSnow': {
+                            },
+                            'fog': {
+                            },
+                            'snowLevel': {
+                            },
+                            'mixingHeight': {
+                            },
+                            'ceilingHeight': {
+                            },
+                            'visibility': {
+                            },
+                            'lightningActivityAndHainesIndex': {
+                            },
+                            'lowVisibilityOccurrenceRiskIndex': {
+                            },
+                            'davisStabilityIndex': {
+                            },
+                            'turnerStabilityIndex': {
+                            },
+                            'atmosphericDispersionIndex': {
+                            },
+                            'redFlagThreatIndex': {
+                            },
+                            'pressure': {
+                            },
+                            'significantWaveHeight': {
+                            },
+                            'windWaveHeight': {
+                            },
+                            'primarySwell': {
+                            },
+                            'secondarySwell': {
+                            }
+                            //,
+                            //'tide': {
+                            //    'show': true,
+                            //    'maxDistance': Units.convert(100).from('miles').to('m')
+                            //}
+                        },
+                        'onGridPoint': showGridPointPolygon,
+                        'onTidePredictions': (station, data) => {
+                            var stationLatLng = L.latLng([station['latlon'].lat, station['latlon'].lon]),
+                                pointLatLng = L.latLng([lat, lon]),
+                                distance = wxMap.map.distance(stationLatLng, pointLatLng),
+                                units = NOAAVariable.getUnits('distance');
+
+                            coopsStationMarker = L.marker(stationLatLng).addTo(wxMap.map);
+                            coopsStationMarker.bindTooltip('NOAA Tides & Currents Station: ' + station['name'] + ', distance: ' + NOAAVariable.formatValue('distance', Units.convert(distance).from('m').to(units)) + units);
+                        }
+                    }
+                });
+            }
+
+            function showGridPointPolygon(gridPoint) {
+
+                var i, j, latlngs = [];
+
+                for (i = 0; i < gridPoint.geometry.rings.length; i++) {
+                    latlngs[i] = [];
+                    for (j = 0; j < gridPoint.geometry.rings[i].length; j++) {
+                        latlngs[i].push([gridPoint.geometry.rings[i][j].lat, gridPoint.geometry.rings[i][j].lon]);
+                    }
+                }
+
+                gridPointPolygon = L.polygon(latlngs, {
+                    'bubblingMouseEvents': false
+                }).addTo(wxMap.map);
+
+                gridPointPolygon.on('click', function (e) {
+                    L.DomEvent.stopPropagation(e);
+                });
+            }
+
+            if (load) {
+                getPointForecast(center[0], center[1]);
+            }
+        }
+
+    </script>
+</body>
+</html>

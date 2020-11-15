@@ -1,0 +1,45 @@
+.wxtofly-control-spinner {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    overflow: hidden;
+
+    span {
+        margin-top: auto;
+        margin-bottom: auto;
+        position: relative;
+        left: 50px;
+        font-size: 14px;
+        color: gray;
+    }
+}
+
+@keyframes spinner-line-fade-more {
+    0%, 100% {
+        opacity: 0; /* minimum opacity */
+    }
+
+    1% {
+        opacity: 1;
+    }
+}
+
+@keyframes spinner-line-fade-quick {
+    0%, 39%, 100% {
+        opacity: 0.25; /* minimum opacity */
+    }
+
+    40% {
+        opacity: 1;
+    }
+}
+
+@keyframes spinner-line-fade-default {
+    0%, 100% {
+        opacity: 0.22; /* minimum opacity */
+    }
+
+    1% {
+        opacity: 1;
+    }
+}

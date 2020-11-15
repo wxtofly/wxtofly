@@ -1,0 +1,98 @@
+.noaa-control { 
+    &.forecast {
+        .noaa-control-header {
+            font-size: 10px;
+        }
+
+        .noaa-control-body {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            overflow-y: auto;
+            margin-top: 2px;
+            margin-bottom: 2px;
+
+            .period {
+                flex-shrink: 0;
+                padding: 5px;
+                vertical-align: top;
+                font-size: 10px;
+                display: flex;
+                flex-direction: column;
+
+                &.night {
+                    background-color: #e9ecef;
+                }
+
+                &.daytime {
+                }
+
+                p {
+                    margin: 0;
+                    padding: 0;
+                }
+
+                p.period-name {
+                    font-weight: bold;
+                    text-align: center;
+                    font-size: 12px;
+                    white-space: nowrap;
+                }
+
+                p.icon {
+                    position: relative;
+
+                    img {
+                        display: block;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                }
+
+                p.short-description {
+                    max-width: 100px;
+                    white-space: normal;
+                    text-align: center;
+                    flex-grow: 1;
+                }
+
+                div.temp-wind {
+                    p.temp {
+
+                        span.temp {
+                            font-weight: bold;
+
+                            &.low {
+                                color: #007bff;
+                            }
+
+                            &.high {
+                                color: #ef3725;
+                            }
+                        }
+
+                        span.temp-trend {
+                            margin-left: 3px;
+                        }
+                    }
+
+                    p.wind {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
+        .details {
+            & > .period {
+                font-size: 11px;
+                margin-bottom: 5px;
+                border-bottom: solid 1px #e9ecef;
+
+                .period-name {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,94 @@
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+html,
+body {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+body {
+  padding-top: 70px;
+}
+footer {
+  padding: 30px 0;
+}
+
+.list-group-item.favorites {
+    color: black;
+    background-color: #ffc34d;
+    border-color: #ffc34d;
+}
+.list-group-item.favorites:hover {
+    color: black;
+    background-color: #ffc34d;
+    border-color: #ffc34d;
+}
+
+.windgram-image {
+	max-width: 100%;
+}
+
+.windgramsHeader {
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+.col-xs-6 {
+	width: 250px
+}
+
+.col-sm-9,.col-xs-12 {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.alert-danger {
+	color: #7c0200;
+    background-color: #ff7c7c;
+    border-color: #ff0029;
+}
+
+/*
+ * Off Canvas
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 767px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all .25s ease-out;
+         -o-transition: all .25s ease-out;
+            transition: all .25s ease-out;
+  }
+
+  .row-offcanvas-right {
+    right: 0;
+  }
+
+  .row-offcanvas-left {
+    left: 0;
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -250px;
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -250px; 
+  }
+
+  .row-offcanvas-right.active {
+    right: 250px; 
+  }
+
+  .row-offcanvas-left.active {
+    left: 250px; 
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 250px;
+  }
+}

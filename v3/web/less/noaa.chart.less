@@ -1,0 +1,668 @@
+// color shades
+@colorBlack: black;
+@colorRed: red;
+@colorGreen: #28a745;
+@colorBlue: #0048ff;
+@colorBrown: #996533;
+@colorPurple: #980199;
+@colorLightYellow: yellow;
+@colorDarkGreen: green;
+@colorGrey: #c1c1c1;
+@colorDarkBlue: darkblue;
+@colorLightBlue: #b3d7ff;
+@colorOrange: #ff9900;
+@colorLightGrey: lightgrey;
+
+//temps
+@colorTemperature: @colorRed;
+@colorDewpoint: @colorGreen;
+@colorWindChill: @colorBlue;
+@colorApparentTemperature: @colorPurple;
+@colorHeatIndex: @colorOrange;
+
+
+//propability
+@colorSkyCover: @colorBlue;
+@colorProbabilityOfPrecipitation: @colorBrown;
+@colorRelativeHumidity: @colorGreen;
+@colorprobabilityOfThunder: @colorRed;
+
+// wind
+@colorWindSpeed: @colorPurple;
+@colorWindGust: @colorRed;
+@colorTransportWindSpeed: @colorPurple;
+@colorTwentyFootWindSpeed: @colorPurple;
+
+// tide
+@colorTidePrediction: @colorBlue;
+
+// weather
+@colorRain: @colorDarkGreen;
+@colorRainShowers: @colorGreen;
+@colorSnow: @colorDarkBlue;
+@colorSnowShowers: @colorBlue;
+@colorDrizzle: @colorBrown;
+@colorThunderstorms: @colorRed;
+@colorFog: @colorGrey;
+@colorSmoke: @colorPurple;
+@colorBlowingDust: @colorOrange;
+@colorHaze: @colorOrange;
+// weather precipitation intensity color adjustment
+@intensityLight: 20%;
+@intensityModerate: 10%;
+
+// index
+@colorHainesIndex: @colorOrange;
+@colorLightningActivityLevel: @colorRed;
+@colorLowVisibilityOccurrenceRiskIndex: @colorOrange;
+@colorDavisStabilityIndex: @colorBlue;
+@colorTurnerStabilityIndex: @colorBlue;
+@colorAtmosphericDispersionIndex: @colorRed;
+@colorRedFlagThreatIndex: @colorRed;
+
+// elevation
+@colorSnowLevel: @colorBlue;
+@colorMixingHeight: @colorBrown;
+@colorCeilingHeight: @colorBlue;
+
+// distance
+@colorVisibility: @colorBlue;
+
+// pressure
+@colorPressure: @colorBlue;
+
+// wave
+@colorWaveHeight: @colorPurple;
+@colorWindWaveHeight: @colorBlue;
+
+// swell
+@colorPrimarySwellHeight: @colorPurple;
+@colorWavePeriod: @colorBlue;
+@colorSecondarySwellHeight: @colorPurple;
+@colorWavePeriod2: @colorBlue;
+@colorSwellSymbol: @colorBrown;
+
+@fontSize: 9px;
+@fontFamily: Arial, Helvetica, sans-serif;
+
+.loader {
+    fill: #007bff;
+}
+
+.transparent {
+    fill: transparent;
+    stroke: transparent;
+}
+
+.axis {
+    text {
+        font-family: @fontFamily;
+        font-size: @fontSize;
+        font-weight: bold;
+    }
+}
+
+.legend {
+    text {
+        font-family: @fontFamily;
+        font-size: @fontSize;
+        font-weight: bold;
+        fill: #fff;
+    }
+
+    &.legend-hidden {
+        text {
+            fill: black;
+        }
+
+        rect {
+            fill: #f8f9fa;
+            stroke-width: 1;
+            stroke: black;
+        }
+    }
+}
+
+.frame {
+    fill: none;
+    stroke-width: 1px;
+    stroke: black;
+}
+
+.control-button {
+    rect {
+        fill-opacity: 0;
+    }
+
+    text {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 9px;
+        fill: #5c5c5c;
+    }
+}
+
+.grid {
+    line {
+        stroke-width: 1px;
+        stroke: #dee2e6;
+    }
+}
+
+.ref-values {
+    line {
+        stroke-width: 1px;
+        stroke: #a0a0a0;
+        stroke-dasharray: 4;
+    }
+}
+
+.night {
+    rect {
+        fill: #e9ecef;
+        fill-opacity: 0.7;
+        stroke: none;
+    }
+}
+
+.button-arrow {
+    fill: black;
+    fill-opacity: 0.05;
+    stroke: black;
+    stroke-opacity: 0.1;
+}
+
+.line {
+    fill: none;
+    stroke-width: 1px;
+    stroke: grey;
+}
+
+.line-marker {
+    stroke: none;
+}
+
+.line-label {
+    font-family: @fontFamily;
+    font-size: @fontSize;
+    font-weight: bold;
+}
+
+.clip {
+    clip-path: url(#clip-path);
+}
+
+.zoom-base {
+    pointer-events: all;
+
+    rect {
+        fill: black;
+        fill-opacity: 0;
+        pointer-events: all;
+    }
+}
+
+.wind-barb {
+    stroke: black;
+    stroke-width: 1px;
+    fill: black;
+}
+
+.wind-barb-0 {
+    stroke: black;
+    stroke-width: 1px;
+    fill: none;
+}
+
+.swell {
+    line {
+        stroke: @colorSwellSymbol;
+        stroke-width: 1px;
+        fill: @colorSwellSymbol;
+    }
+}
+
+.amount {
+    rect {
+        fill-opacity: 0.8;
+        stroke-width: 1px;
+    }
+
+    text {
+        font-family: @fontFamily;
+        font-size: @fontSize;
+        font-weight: bold;
+    }
+}
+
+.amount-quantitativePrecipitation {
+    rect {
+        fill: @colorLightYellow;
+        stroke: @colorDarkGreen;
+    }
+
+    text {
+        fill: @colorDarkGreen;
+    }
+}
+
+.amount-snowfallAmount {
+    rect {
+        fill: @colorLightBlue;
+        stroke: @colorDarkBlue;
+    }
+
+    text {
+        fill: @colorDarkBlue;
+    }
+}
+
+
+.amount-visibility {
+    rect {
+        fill: @colorLightGrey;
+        stroke: @colorBlack;
+    }
+
+    text {
+        fill: @colorBlack;
+    }
+}
+
+// temperature
+.stroke-temperature {
+    stroke: @colorTemperature;
+}
+.fill-temperature {
+    fill: @colorTemperature;
+}
+
+.stroke-dewpoint {
+    stroke: @colorDewpoint;
+}
+.fill-dewpoint {
+    fill: @colorDewpoint;
+}
+
+.stroke-windChill {
+    stroke: @colorWindChill;
+}
+
+.fill-windChill {
+    fill: @colorWindChill;
+}
+
+.stroke-apparentTemperature {
+    stroke: @colorApparentTemperature;
+}
+
+.fill-apparentTemperature {
+    fill: @colorApparentTemperature;
+}
+
+.stroke-heatIndex {
+    stroke: @colorHeatIndex;
+}
+
+.fill-heatIndex {
+    fill: @colorHeatIndex;
+}
+
+// propability
+.stroke-skyCover {
+    stroke: @colorSkyCover;
+}
+
+.fill-skyCover {
+    fill: @colorSkyCover;
+}
+
+.stroke-probabilityOfPrecipitation {
+    stroke: @colorProbabilityOfPrecipitation;
+}
+
+.fill-probabilityOfPrecipitation {
+    fill: @colorProbabilityOfPrecipitation;
+}
+
+.stroke-relativeHumidity {
+    stroke: @colorRelativeHumidity;
+}
+
+.fill-relativeHumidity {
+    fill: @colorRelativeHumidity;
+}
+
+.stroke-probabilityOfThunder {
+    stroke: @colorprobabilityOfThunder;
+}
+
+.fill-probabilityOfThunder {
+    fill: @colorprobabilityOfThunder;
+}
+
+// wind
+.stroke-windSpeed {
+    stroke: @colorWindSpeed;
+}
+
+.fill-windSpeed {
+    fill: @colorWindSpeed;
+}
+
+.stroke-windGust {
+    stroke: @colorWindGust;
+}
+
+.fill-windGust {
+    fill: @colorWindGust;
+}
+
+.stroke-transportWindSpeed {
+    stroke: @colorTransportWindSpeed;
+}
+
+.fill-transportWindSpeed {
+    fill: @colorTransportWindSpeed;
+}
+
+.stroke-twentyFootWindSpeed {
+    stroke: @colorTwentyFootWindSpeed;
+}
+
+.fill-twentyFootWindSpeed {
+    fill: @colorTwentyFootWindSpeed;
+}
+
+// index
+.stroke-hainesIndex {
+    stroke: @colorHainesIndex;
+}
+
+.fill-hainesIndex {
+    fill: @colorHainesIndex;
+}
+
+.stroke-lightningActivityLevel {
+    stroke: @colorLightningActivityLevel;
+}
+
+.fill-lightningActivityLevel {
+    fill: @colorLightningActivityLevel;
+}
+
+.stroke-lowVisibilityOccurrenceRiskIndex {
+    stroke: @colorLowVisibilityOccurrenceRiskIndex;
+}
+
+.fill-lowVisibilityOccurrenceRiskIndex {
+    fill: @colorLowVisibilityOccurrenceRiskIndex;
+}
+
+.stroke-davisStabilityIndex {
+    stroke: @colorDavisStabilityIndex;
+}
+
+.fill-davisStabilityIndex {
+    fill: @colorDavisStabilityIndex;
+}
+
+.stroke-stability {
+    stroke: @colorTurnerStabilityIndex;
+}
+
+.fill-stability {
+    fill: @colorTurnerStabilityIndex;
+}
+
+.stroke-atmosphericDispersionIndex {
+    stroke: @colorAtmosphericDispersionIndex;
+}
+
+.fill-atmosphericDispersionIndex {
+    fill: @colorAtmosphericDispersionIndex;
+}
+
+.stroke-redFlagThreatIndex {
+    stroke: @colorRedFlagThreatIndex;
+}
+
+.fill-redFlagThreatIndex {
+    fill: @colorRedFlagThreatIndex;
+}
+
+// tide
+.stroke-tidePrediction {
+    stroke: @colorTidePrediction;
+}
+
+.fill-tidePrediction {
+    fill: @colorTidePrediction;
+}
+
+// elevation
+.stroke-snowLevel {
+    stroke: @colorSnowLevel;
+}
+
+.fill-snowLevel {
+    fill: @colorSnowLevel;
+}
+
+.stroke-mixingHeight {
+    stroke: @colorMixingHeight;
+}
+
+.fill-mixingHeight {
+    fill: @colorMixingHeight;
+}
+
+.stroke-ceilingHeight {
+    stroke: @colorCeilingHeight;
+}
+
+.fill-ceilingHeight {
+    fill: @colorCeilingHeight;
+}
+
+// distance
+.stroke-visibility {
+    stroke: @colorVisibility;
+}
+
+.fill-visibility {
+    fill: @colorVisibility;
+}
+
+// pressure
+.stroke-pressure {
+    stroke: @colorPressure;
+}
+
+.fill-pressure {
+    fill: @colorPressure;
+}
+
+// wave
+.stroke-waveHeight {
+    stroke: @colorWaveHeight;
+}
+.fill-waveHeight {
+    fill: @colorWaveHeight;
+}
+
+.stroke-windWaveHeight {
+    stroke: @colorWindWaveHeight;
+}
+.fill-windWaveHeight {
+    fill: @colorPressure;
+}
+
+// swell
+.stroke-primarySwellHeight {
+    stroke: @colorPrimarySwellHeight;
+}
+
+.fill-primarySwellHeight {
+    fill: @colorPrimarySwellHeight;
+}
+
+.stroke-wavePeriod {
+    stroke: @colorWavePeriod;
+}
+
+.fill-wavePeriod {
+    fill: @colorWavePeriod;
+}
+
+.stroke-secondarySwellHeight {
+    stroke: @colorSecondarySwellHeight;
+}
+
+.fill-secondarySwellHeight {
+    fill: @colorSecondarySwellHeight;
+}
+
+.stroke-wavePeriod2 {
+    stroke: @colorWavePeriod2;
+}
+
+.fill-wavePeriod2 {
+    fill: @colorWavePeriod2;
+}
+
+
+// weather - Precipitation
+.stroke-rain_showers {
+    stroke: @colorWindWaveHeight;
+}
+
+.fill-rain_showers {
+    fill: @colorRainShowers;
+    &.intensity-light {
+        fill: lighten(@colorRainShowers, @intensityLight);
+    }
+    &.intensity-moderate {
+        fill: lighten(@colorRainShowers, @intensityModerate);
+    }
+    &.intensity-heavy {
+    }
+}
+
+.stroke-rain {
+    stroke: @colorRain;
+}
+
+.fill-rain {
+    fill: @colorRain;
+
+    &.intensity-light {
+        fill: lighten(@colorRain, @intensityLight);
+    }
+
+    &.intensity-moderate {
+        fill: lighten(@colorRain, @intensityModerate);
+    }
+
+    &.intensity-heavy {
+    }
+}
+
+.stroke-drizzle {
+    stroke: @colorDrizzle;
+}
+
+.fill-drizzle {
+    fill: @colorDrizzle;
+
+    &.intensity-light {
+        fill: lighten(@colorDrizzle, @intensityLight);
+    }
+
+    &.intensity-moderate {
+        fill: lighten(@colorDrizzle, @intensityModerate);
+    }
+
+    &.intensity-heavy {
+    }
+}
+
+.stroke-snow_showers {
+    stroke: @colorSnowShowers;
+}
+
+.fill-snow_showers {
+    fill: @colorSnowShowers;
+
+    &.intensity-light {
+        fill: lighten(@colorSnowShowers, @intensityLight);
+    }
+
+    &.intensity-moderate {
+        fill: lighten(@colorSnowShowers, @intensityModerate);
+    }
+
+    &.intensity-heavy {
+    }
+}
+
+.stroke-snow {
+    stroke: @colorSnow;
+}
+
+.fill-snow {
+    fill: @colorSnow;
+
+    &.intensity-light {
+        fill: lighten(@colorSnow, @intensityLight);
+    }
+
+    &.intensity-moderate {
+        fill: lighten(@colorSnow, @intensityModerate);
+    }
+
+    &.intensity-heavy {
+    }
+}
+
+.stroke-thunderstorms {
+    stroke: @colorThunderstorms;
+}
+
+.fill-thunderstorms {
+    fill: @colorThunderstorms;
+}
+
+// Weather - Obscuration
+.stroke-fog {
+    stroke: @colorFog;
+}
+
+.fill-fog {
+    fill: @colorFog;
+}
+
+.stroke-blowing_dust {
+    stroke: @colorBlowingDust;
+}
+
+.fill-blowing_dust {
+    fill: @colorBlowingDust;
+}
+
+.stroke-smoke {
+    stroke: @colorSmoke;
+}
+
+.fill-smoke {
+    fill: @colorSmoke;
+}
+
+.stroke-haze {
+    stroke: @colorHaze;
+}
+
+.fill-haze {
+    fill: @colorHaze;
+}
+

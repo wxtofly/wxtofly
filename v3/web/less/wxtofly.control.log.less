@@ -1,0 +1,70 @@
+div.log {
+
+    .log-header {
+        border-bottom: 1px solid #dee2e6 !important;
+        margin: 5px 0
+    }
+
+    .log-body {
+        table {
+            word-wrap: break-word;
+            table-layout: auto;
+            width: 100%;
+
+            tr {
+                td:first-child {
+                    padding-left: 0px;
+                }
+
+                td {
+                    padding-left: 10px;
+                    vertical-align: top;
+                }
+
+                td.log-message {
+                    word-break:break-word;
+                }
+
+                td.log-timestamp {
+                    width:1px;
+                    white-space:nowrap;
+                }
+
+                td.log-icon {
+                    width: 20px;
+                    padding-top: 4px;
+                }
+
+                td.log-icon-error {
+                    color: red;
+                }
+
+                td.log-icon-debug {
+                    color: grey;
+                }
+
+                td.log-icon-info {
+                    color: #33cc33;
+                }
+
+                td.log-icon-warning {
+                    color: #ffcc00;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    div.log {
+        .log-body {
+            table {
+                tr {
+                    td {
+                        padding-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+}

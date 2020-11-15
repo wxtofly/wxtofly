@@ -1,0 +1,52 @@
+[
+{"time": 1530733104.97717, "level": "INFO", "message": "Staring WxToFLy run"}
+,{"time": 1530733104.9781506, "level": "DEBUG", "message": "Performin run for single job: CHELAN-1"}
+,{"time": 1530733104.9791186, "level": "DEBUG", "message": "Adding job: CHELAN-1"}
+,{"time": 1530733104.9794548, "level": "DEBUG", "message": "Removing files older than 2 days from /home/jiri/wx3/CHELAN/logs"}
+,{"time": 1530733104.9797435, "level": "DEBUG", "message": "Removing files older than 2 days from /home/jiri/wx3/CHELAN/run"}
+,{"time": 1530733104.9801512, "level": "INFO", "message": "Starting job: CHELAN-1"}
+,{"time": 1530733104.9807606, "level": "INFO", "message": "Initializing region CHELAN"}
+,{"time": 1530733104.9874852, "level": "INFO", "message": "Ref_latitude: 47.82"}
+,{"time": 1530733104.9878666, "level": "INFO", "message": "Ref_longitude: -118.79"}
+,{"time": 1530733105.0089147, "level": "INFO", "message": "Timezone: America/Los_Angeles(PDT)"}
+,{"time": 1530733105.0112863, "level": "INFO", "message": "UTC offset: -7.0"}
+,{"time": 1530733105.0123727, "level": "DEBUG", "message": "Initializing Region configuration object for region base path /home/jiri/wx3/CHELAN"}
+,{"time": 1530733105.0225701, "level": "DEBUG", "message": "Name: CHELAN"}
+,{"time": 1530733105.022809, "level": "DEBUG", "message": "Grib source: NAMCONUS12"}
+,{"time": 1530733105.0231755, "level": "DEBUG", "message": "Creating GRIB model definition object for NAMCONUS12"}
+,{"time": 1530733105.0467498, "level": "DEBUG", "message": "protocol: http"}
+,{"time": 1530733105.0472884, "level": "DEBUG", "message": "server: nomads.ncep.noaa.gov"}
+,{"time": 1530733105.0480978, "level": "DEBUG", "message": "url_path_format: pub/data/nccf/com/nam/prod/nam.{init_date:%Y%m%d}"}
+,{"time": 1530733105.0484788, "level": "DEBUG", "message": "url_file_format: nam.t{init_time:02}z.awphys{forecast_hour:02}.tm00.grib2"}
+,{"time": 1530733105.04875, "level": "DEBUG", "message": "ungrib_vtable: Vtable.NAM"}
+,{"time": 1530733105.0489612, "level": "DEBUG", "message": "use_nomads_filter: True"}
+,{"time": 1530733105.0491583, "level": "DEBUG", "message": "model_cycles: [0, 6, 12, 18]"}
+,{"time": 1530733105.0493603, "level": "DEBUG", "message": "nomads_filter_url: http://nomads.ncep.noaa.gov/cgi-bin/filter_nam.pl"}
+,{"time": 1530733105.0496666, "level": "DEBUG", "message": "Removing old forecast data for region CHELAN"}
+,{"time": 1530733105.3714035, "level": "DEBUG", "message": "Init hour: 00"}
+,{"time": 1530733105.3825247, "level": "DEBUG", "message": "Run start time: UTC 2018-07-04 19:38:24.977513"}
+,{"time": 1530733105.3896463, "level": "DEBUG", "message": "Job min start time: UTC 2018-07-03 01:30:00"}
+,{"time": 1530733105.39051, "level": "INFO", "message": "Starting WRF model simulation"}
+,{"time": 1530739614.3458436, "level": "INFO", "message": "Finished WRF model simulation in 1:48:28.954916"}
+,{"time": 1530739614.349117, "level": "DEBUG", "message": "Updating site files"}
+,{"time": 1530739614.3499177, "level": "DEBUG", "message": "Updating site file Chelan_2018_Waypoints.wpt"}
+,{"time": 1530739614.350766, "level": "DEBUG", "message": "Downloading http://wxtofly.net/beta/CHELAN/Chelan_2018_Waypoints.wpt"}
+,{"time": 1530739614.4207065, "level": "WARNING", "message": "Unable to download Chelan_2018_Waypoints.wpt: Error downloading http://wxtofly.net/beta/CHELAN/Chelan_2018_Waypoints.wpt. Status code: 404"}
+,{"time": 1530739614.4296763, "level": "DEBUG", "message": "Loading region sites"}
+,{"time": 1530739614.43088, "level": "DEBUG", "message": "Reading waypoint site list from /home/jiri/wx3/CHELAN/Chelan_2018_Waypoints.wpt"}
+,{"time": 1530739614.4412978, "level": "DEBUG", "message": "Initializing WPS projection for /home/jiri/wx3/CHELAN/namelist.wps"}
+,{"time": 1530739614.4427047, "level": "DEBUG", "message": "Initializing WPS projection for /home/jiri/wx3/CHELAN/namelist.wps"}
+,{"time": 1530739614.4472477, "level": "DEBUG", "message": "Total number of sites: 81"}
+,{"time": 1530739614.4476132, "level": "INFO", "message": "Post-processing WRF output for domain d01"}
+,{"time": 1530739614.4637668, "level": "INFO", "message": "Calculating RASP variables"}
+,{"time": 1530739645.9711344, "level": "INFO", "message": "Finished calculating RASP variables in 0:00:31.506653"}
+,{"time": 1530739663.5659359, "level": "INFO", "message": "Finished plotting Windgrams in 0:00:17.593187"}
+,{"time": 1530739665.5986896, "level": "INFO", "message": "Generating BLIPSPOT  data files"}
+,{"time": 1530740187.081935, "level": "INFO", "message": "Finished generating BLIPSPOT data in 0:08:41.481690"}
+,{"time": 1530740198.933384, "level": "INFO", "message": "Post-processing WRF output for domain d02"}
+,{"time": 1530740198.953673, "level": "INFO", "message": "Calculating RASP variables"}
+,{"time": 1530740240.0247097, "level": "INFO", "message": "Finished calculating RASP variables in 0:00:41.070650"}
+,{"time": 1530740296.7409375, "level": "INFO", "message": "Finished plotting Windgrams in 0:00:56.714945"}
+,{"time": 1530740296.7773304, "level": "INFO", "message": "Generating BLIPSPOT  data files"}
+,{"time": 1530740744.2247875, "level": "INFO", "message": "Finished generating BLIPSPOT data in 0:07:27.446746"}
+]

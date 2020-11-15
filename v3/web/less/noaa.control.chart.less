@@ -1,0 +1,43 @@
+.noaa-control {
+    &.chart {
+
+        .noaa-control-header {
+            font-size: 10px;
+        }
+
+        .noaa-control-body {
+            .chart-container {
+                overflow: hidden;
+            }
+        }
+
+        .noaa-control-footer {
+            display: flex;
+            justify-content: center;
+
+            .chart-nav {
+                height: 24px;
+                display: flex;
+                width: 100%;
+                max-width: 400px;
+            }
+
+            button {
+                font-size: 12px;
+                padding: 3px 15px;
+                color: black;
+                background: none;
+                border: none;
+                flex-grow: 1;
+
+                &:hover {
+                    background-color: #f5f5f5;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+.leaflet-control-coordinates {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 5px;
+    font-weight: 700;
+    font-size: 11px;
+
+    &.no-border {
+        margin: 0;
+        border: 0;
+        border-radius: initial;
+    }
+
+    * {
+        pointer-events: none;
+    }
+}
+
+.leaflet-pane.leaflet-coordinates-pane {
+    z-index: 625;
+
+    .leaflet-control-coordinates-icon {
+        background: url(icons/MapCenterCoordIcon1.svg) 50% 50% no-repeat;
+        margin: -14px 0 0 -14px;
+        width: 28px;
+        height: 28px;
+        left: 50%;
+        top: 50%;
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: -1;
+        pointer-events: none;
+    }
+}

@@ -1,0 +1,1065 @@
+{
+  "@context": [
+    "https://raw.githubusercontent.com/geojson/geojson-ld/master/contexts/geojson-base.jsonld",
+    {
+      "wx": "https://api.weather.gov/ontology#",
+      "s": "https://schema.org/",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "unit": "http://codes.wmo.int/common/unit/",
+      "@vocab": "https://api.weather.gov/ontology#",
+      "geometry": {
+        "@id": "s:GeoCoordinates",
+        "@type": "geo:wktLiteral"
+      },
+      "city": "s:addressLocality",
+      "state": "s:addressRegion",
+      "distance": {
+        "@id": "s:Distance",
+        "@type": "s:QuantitativeValue"
+      },
+      "bearing": {
+        "@type": "s:QuantitativeValue"
+      },
+      "value": {
+        "@id": "s:value"
+      },
+      "unitCode": {
+        "@id": "s:unitCode",
+        "@type": "@id"
+      },
+      "forecastOffice": {
+        "@type": "@id"
+      },
+      "forecastGridData": {
+        "@type": "@id"
+      },
+      "publicZone": {
+        "@type": "@id"
+      },
+      "county": {
+        "@type": "@id"
+      },
+      "observationStations": {
+        "@container": "@list",
+        "@type": "@id"
+      }
+    }
+  ],
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "id": "https://api.weather.gov/stations/KSEA",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.31361,
+          47.4447199
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KSEA",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 130.1496,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KSEA",
+        "name": "Seattle, Seattle-Tacoma International Airport",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KBFI",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.31361,
+          47.54583
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KBFI",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 4.8768,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KBFI",
+        "name": "Seattle, Seattle Boeing Field",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KGEG",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.52778,
+          47.62139
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KGEG",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 722.9856000000001,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KGEG",
+        "name": "Spokane, Spokane International Airport",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KUIL",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -124.555,
+          47.9375
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KUIL",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 59.1312,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KUIL",
+        "name": "Quillayute, Quillayute State Airport",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KDLS",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.16572,
+          45.61901
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KDLS",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 71.0184,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KDLS",
+        "name": "The Dalles Municipal Airport",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KSMP",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.33817,
+          47.27648
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KSMP",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 1210.056,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KSMP",
+        "name": "Stampede Pass",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KYKM",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.53361,
+          46.56417
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KYKM",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 333.1464,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KYKM",
+        "name": "Yakima, Yakima Air Terminal",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KHQM",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.92,
+          46.97111
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KHQM",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 3.9624,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KHQM",
+        "name": "Hoquiam, Bowerman Airport",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KALW",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.2858,
+          46.09462
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KALW",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 356.00640000000004,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KALW",
+        "name": "Walla Walla Regional Airport",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KMWH",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.31451,
+          47.19299
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KMWH",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 356.00640000000004,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KMWH",
+        "name": "Grant County Airport",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KBLI",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.54064,
+          48.79911
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KBLI",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 45.110400000000006,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KBLI",
+        "name": "Bellingham, Bellingham International Airport",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KNUW",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.65056,
+          48.34917
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KNUW",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 14.020800000000001,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KNUW",
+        "name": "Whidbey Island, Naval Air Station",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KOLM",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.90333,
+          46.97333
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KOLM",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 61.8744,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KOLM",
+        "name": "Olympia, Olympia Airport",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KEPH",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.51583,
+          47.3075
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KEPH",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 388.9248,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KEPH",
+        "name": "Ephrata, Ephrata Municipal Airport",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KSFF",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.32028,
+          47.68556
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KSFF",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 594.9696,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KSFF",
+        "name": "Spokane, Felts Field",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KEAT",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.20694,
+          47.39889
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KEAT",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 381,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KEAT",
+        "name": "Wenatchee, Pangborn Memorial Airport",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KCLM",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.50661,
+          48.12194
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KCLM",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 79.8576,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KCLM",
+        "name": "Port Angeles Fairchild International Airport",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KPAE",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.28305,
+          47.92331
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KPAE",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 157.8864,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KPAE",
+        "name": "Everett Snohomish County",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KPSC",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.11667,
+          46.26972
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KPSC",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 124.0536,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KPSC",
+        "name": "Pasco, Tri-Cities Airport",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KGRF",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.55,
+          47.11667
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KGRF",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 92.0496,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KGRF",
+        "name": "Fort Lewis / Gray U. S. Army Airfield",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KTCM",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.48333,
+          47.15
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KTCM",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 98.1456,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KTCM",
+        "name": "Tacoma / McChord Air Force Base",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KSKA",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.65,
+          47.61667
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KSKA",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 750.1128,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KSKA",
+        "name": "Fairchild Air Force Base",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KAWO",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.16667,
+          48.16667
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KAWO",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 42.062400000000004,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KAWO",
+        "name": "Arlington Municipal",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KRNT",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.21278,
+          47.49444
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KRNT",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 7.9248,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KRNT",
+        "name": "Renton, Renton Municipal Airport",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KKLS",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.9,
+          46.11667
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KKLS",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 6.096,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KKLS",
+        "name": "Kelso, Kelso-Longview Airport",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KPUW",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.11579,
+          46.74377
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KPUW",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 774.8016,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KPUW",
+        "name": "Pullman / Moscow Regional Airport",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KTIW",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.57611,
+          47.2675
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KTIW",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 96.012,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KTIW",
+        "name": "Tacoma, Tacoma Narrows Airport",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KELN",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.53132,
+          47.0337699
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KELN",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 531.876,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KELN",
+        "name": "Ellensburg, Ellensburg Bowers Field",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KSHN",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.14083,
+          47.23806
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KSHN",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 81.9912,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KSHN",
+        "name": "Shelton, Shelton Sanderson Field",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KPWT",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.75,
+          47.5
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KPWT",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 134.112,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KPWT",
+        "name": "Bremerton, Bremerton National Airport",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KDEW",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.42833,
+          47.97417
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KDEW",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 672.0840000000001,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KDEW",
+        "name": "Deer Park, Deer Park Airport",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KFHR",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.02528,
+          48.52028
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KFHR",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 32.9184,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KFHR",
+        "name": "Friday Harbor, Friday Harbor Airport",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KOMK",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.51806,
+          48.46417
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KOMK",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 396.8496,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KOMK",
+        "name": "Omak, Omak Airport",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KORS",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.91028,
+          48.70806
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KORS",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 9.144,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KORS",
+        "name": "Eastsound, Orcas Island Airport",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KBVS",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.42083,
+          48.47083
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KBVS",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 43.891200000000005,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KBVS",
+        "name": "Burlington/Mount Vernon, Skagit Regional Airport",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/K1YT",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.45,
+          46.6667
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/K1YT",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 437.99760000000003,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "K1YT",
+        "name": "Vagabond Army Airfield",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KRLD",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.3058,
+          46.30859
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KRLD",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 117.9576,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KRLD",
+        "name": "Richland Airport",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KVUO",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.65419,
+          45.62103
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KVUO",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 6.096,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KVUO",
+        "name": "Pearson Airfield",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KNOW",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.4,
+          48.13333
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KNOW",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 4.8768,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KNOW",
+        "name": "Port Angeles Coast Guard Air Station",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KCLS",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.9827,
+          46.677
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KCLS",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 53.949600000000004,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KCLS",
+        "name": "Chehalis-Centralia Airport",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KPLU",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.287,
+          47.104
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KPLU",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 163.9824,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KPLU",
+        "name": "Pierce County-Thun Field",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/KOTX",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.6268,
+          47.6811999
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/KOTX",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 729.996,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "KOTX",
+        "name": "Spokane NWS",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/K1S5",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.9704,
+          46.3271
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/K1S5",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 234.08640000000003,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "K1S5",
+        "name": "Sunnyside Municipal Airport",
+        "timeZone": "America/Los_Angeles"
+      }
+    },
+    {
+      "id": "https://api.weather.gov/stations/K0S9",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.81159,
+          48.0551699
+        ]
+      },
+      "properties": {
+        "@id": "https://api.weather.gov/stations/K0S9",
+        "@type": "wx:ObservationStation",
+        "elevation": {
+          "value": 32.004000000000005,
+          "unitCode": "unit:m"
+        },
+        "stationIdentifier": "K0S9",
+        "name": "Port Townsend Jefferson County International Airport",
+        "timeZone": "America/Los_Angeles"
+      }
+    }
+  ],
+  "observationStations": [
+    "https://api.weather.gov/stations/KSEA",
+    "https://api.weather.gov/stations/KBFI",
+    "https://api.weather.gov/stations/KGEG",
+    "https://api.weather.gov/stations/KUIL",
+    "https://api.weather.gov/stations/KDLS",
+    "https://api.weather.gov/stations/KSMP",
+    "https://api.weather.gov/stations/KYKM",
+    "https://api.weather.gov/stations/KHQM",
+    "https://api.weather.gov/stations/KALW",
+    "https://api.weather.gov/stations/KMWH",
+    "https://api.weather.gov/stations/KBLI",
+    "https://api.weather.gov/stations/KNUW",
+    "https://api.weather.gov/stations/KOLM",
+    "https://api.weather.gov/stations/KEPH",
+    "https://api.weather.gov/stations/KSFF",
+    "https://api.weather.gov/stations/KEAT",
+    "https://api.weather.gov/stations/KCLM",
+    "https://api.weather.gov/stations/KPAE",
+    "https://api.weather.gov/stations/KPSC",
+    "https://api.weather.gov/stations/KGRF",
+    "https://api.weather.gov/stations/KTCM",
+    "https://api.weather.gov/stations/KSKA",
+    "https://api.weather.gov/stations/KAWO",
+    "https://api.weather.gov/stations/KRNT",
+    "https://api.weather.gov/stations/KKLS",
+    "https://api.weather.gov/stations/KPUW",
+    "https://api.weather.gov/stations/KTIW",
+    "https://api.weather.gov/stations/KELN",
+    "https://api.weather.gov/stations/KSHN",
+    "https://api.weather.gov/stations/KPWT",
+    "https://api.weather.gov/stations/KDEW",
+    "https://api.weather.gov/stations/KFHR",
+    "https://api.weather.gov/stations/KOMK",
+    "https://api.weather.gov/stations/KORS",
+    "https://api.weather.gov/stations/KBVS",
+    "https://api.weather.gov/stations/K1YT",
+    "https://api.weather.gov/stations/KRLD",
+    "https://api.weather.gov/stations/KVUO",
+    "https://api.weather.gov/stations/KNOW",
+    "https://api.weather.gov/stations/KCLS",
+    "https://api.weather.gov/stations/KPLU",
+    "https://api.weather.gov/stations/KOTX",
+    "https://api.weather.gov/stations/K1S5",
+    "https://api.weather.gov/stations/K0S9"
+  ]
+}

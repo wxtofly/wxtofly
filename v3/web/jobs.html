@@ -1,0 +1,57 @@
+﻿<html>
+<head>
+    <title>WxToFly - Status</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/font-awesome/css/all.min.css" rel="stylesheet">
+    <link href="css/wxtofly.css" rel="stylesheet">
+
+    <!-- site icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="css/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="css/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="css/img/favicon-16x16.png">
+    <link rel="mask-icon" href="css/img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body class="page-jobs">
+
+    <nav id="navbar"></nav>
+
+    <div id="machines" class="container-fluid mt-2">
+    </div>
+
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="lib/jquery-csv/jquery.csv.min.js"></script>
+    <script src="lib/moment/moment.min.js"></script>
+    <script src="js/util.local-storage.js"></script>
+    <script src="js/wxtofly.utils.js"></script>
+    <script src="js/wxtofly.run-jobs.js"></script>
+    <script src="js/wxtofly.control.log.js"></script>
+    <script src="js/wxtofly.control.navbar.js"></script>
+    <script src="js/wxtofly.dialog.disclaimer.js"></script>
+    <script src="js/wxtofly.dialog.settings.js"></script>
+    <script src="js/wxtofly.control.machine-status.js"></script>
+    <script src="js/wxtofly.control.machine-jobs.js"></script>
+    <script>
+        $('#navbar').navbar();
+
+        RunJobs({
+            'onLoaded': function (e) {
+                e.machines.forEach(function (machine) {
+                    var div = $('<div />');
+                    $('#machines').append(div);
+                    div.machineStatus(machine, e.machineJobs[machine], {
+                        'showStatus': false,
+                        'showsJobs': true,
+                        'showsLog': false,
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
